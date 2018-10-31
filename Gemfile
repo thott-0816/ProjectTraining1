@@ -6,6 +6,7 @@ ruby "2.5.1"
 gem "rails", "~> 5.2.1"
 gem "mysql2", ">= 0.4.4", "< 0.6.0"
 gem "puma", "~> 3.11"
+gem "bootstrap-sass", "~> 3.3.7"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
@@ -13,6 +14,11 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "devise"
+gem "omniauth-facebook"
+gem "jquery-rails"
+gem "font-awesome-rails"
+gem "figaro"
+gem "omniauth-google-oauth2"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

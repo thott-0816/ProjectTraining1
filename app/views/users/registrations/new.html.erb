@@ -1,0 +1,37 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-signup">
+  Launch demo modal
+</button>
+
+<div class="modal fade center-attr" id="modal-signup" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4><b>Đăng ký</b>
+        <button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+      </div>
+      <div class="modal-body modal-padding">
+        <p>Đăng ký bằng email</p>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), remote: true) do |f| %>
+          <div class="error-message text-left"></div>
+          <%= f.text_field :name, class:"modal-input form-control", autofocus: true, placeholder: "Họ và tên" %><br>
+          <%= f.email_field :email, class:"modal-input form-control", placeholder: "Email" %><br>
+          <%= f.password_field :password, class:"modal-input form-control",
+            placeholder: "Mật Khẩu" %><br>
+          <%= f.password_field :password_confirmation, class:"modal-input form-control",
+            placeholder: "Xác nhận mật khẩu" %><br>
+          <%= f.submit "Đăng ký", class:"modal-input form-control btn btn-danger" %>
+        <% end %>
+        <hr>
+        <p>Đăng ký với tài khoản mạng xã hội</p>
+        <%= link_to user_facebook_omniauth_authorize_path, class: "modal-input btn btn-primary" do %>
+          <i class="fa fa-facebook-square"></i> Facebook
+        <% end %>
+        <%= link_to user_google_oauth2_omniauth_authorize_path, class: "modal-input btn btn-danger" do %>
+          <i class="fa fa-google-plus-square"></i> Google
+        <% end %>
+        <hr>
+        <p>Đã có tài khoản? <%= link_to "Đăng nhập", "#" %></p>
+      </div>
+    </div>
+  </div>
+</div>
