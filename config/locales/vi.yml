@@ -3,7 +3,7 @@ vi:
     registrations:
       new:
         sign_up: "Đăng ký"
-        sign_un_with_email: "Đăng ký bằng email"
+        sign_up_with_email: "Đăng ký bằng email"
         name: "Họ và tên"
         email: "Email"
         password: "Mật Khẩu"
@@ -13,3 +13,25 @@ vi:
         sign_in: "Đăng nhập"
         facebook: "Facebook"
         google: "Google"
+        sign_in: "Đăng nhập"
+    sessions:
+      new:
+        sign_in: "Đăng nhập"
+        email: "Email"
+        password: "Mật Khẩu"
+        facebook: "Facebook"
+        google: "Google"
+        sign_in_with_email: "Đăng nhập bằng email"
+        sign_in_with_other: "Đăng nhập với tài khoản mạng xã hội"
+        no_account: "Chưa có tài khoản?"
+        forget_pass: "Quên mật khẩu đăng nhập?"
+        sign_up: "Đăng ký"
+        remember: "Ghi nhớ"
+    passwords:
+      new:
+        title_forget: "Quên mật khẩu"
+        email: "Email"
+        btn_send: "Gửi"
+      edit:
+        btn_change: "Thay đổi"
+        change_pass: "Thay đổi mật khẩu"

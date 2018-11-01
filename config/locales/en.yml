@@ -8,8 +8,30 @@ en:
         email: "Email"
         password: "Password"
         pass_confirm: "Password confirmation"
-        sign_up_with_other: "Register with a social network account"
+        sign_up_with_other: "Sign up with a social network account"
         already_account: "Already have an account?"
         sign_in: "Sign in"
         facebook: "Facebook"
         google: "Google"
+        sign_in: "Sign in"
+    sessions:
+      new:
+        sign_in: "Sign in"
+        email: "Email"
+        password: "Password"
+        facebook: "Facebook"
+        google: "Google"
+        sign_in_with_email: "Sign in with email"
+        sign_in_with_other: "Sign in with a social network account"
+        no_account: "Do you have an account?"
+        forget_pass: "Forgot password?"
+        sign_up: "Sign up"
+        remember: "Remember me"
+    passwords:
+      new:
+        title_forget: "Forgot password"
+        email: "Email"
+        btn_send: "Send"
+      edit:
+        btn_change: "Change"
+        change_pass: "Change password"
