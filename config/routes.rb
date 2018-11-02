@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  devise_for :users, controllers: { registrations: "users/registrations",
-    omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
+  scope "(:locale)", locale: /en|vi/ do
+    root "home#index"
+    devise_for :users, controllers: { registrations: "users/registrations"}, skip: :omniauth_callbacks
+  end
 end

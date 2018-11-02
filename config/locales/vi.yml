@@ -1,0 +1,15 @@
+vi:
+  users:
+    registrations:
+      new:
+        sign_up: "Đăng ký"
+        sign_un_with_email: "Đăng ký bằng email"
+        name: "Họ và tên"
+        email: "Email"
+        password: "Mật Khẩu"
+        pass_confirm: "Xác nhận mật khẩu"
+        sign_up_with_other: "Đăng ký với tài khoản mạng xã hội"
+        already_account: Đã có tài khoản?
+        sign_in: "Đăng nhập"
+        facebook: "Facebook"
+        google: "Google"
