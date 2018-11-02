@@ -1,3 +1,5 @@
+@import 'colors';
+
 .modal-input {
   border: 1px solid;
   border-radius: 20px;
@@ -9,4 +11,30 @@
 
 .modal-padding {
   padding: 15px 80px 15px 80px;
+}
+
+.pass-form {
+  width: 340px;
+  margin: 50px auto;
+
+  form {
+    margin-bottom: 15px;
+    background: $white-moke;
+    box-shadow: 0px 2px 2px $black;
+    padding: 30px;
+  }
+
+  h2 {
+    margin: 0 0 15px;
+  }
+
+  .form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+  }
+
+  .btn {        
+    font-size: 15px;
+    font-weight: bold;
+  }
 }
