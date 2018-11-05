@@ -1,0 +1,114 @@
+@import 'colors';
+
+body {
+  background: $body-gray;
+}
+
+.carousel {
+  margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+}
+
+.carousel-control {
+  left: -12px;
+  width: 40px;
+  background: none repeat scroll 0 0 $black;
+  border-radius: 23px 23px 23px 23px;
+  border: 4px solid $white;
+  height: 40px;
+  margin-top: 150px;
+}
+
+.carousel-control.right {
+  right: -12px;
+}
+
+.carousel-indicators {
+  bottom: -10px;
+  margin-right: -19px;
+  right: 50%;
+  top: auto;
+}
+
+.carousel-indicators li {
+  background: $white-o;
+}
+
+.carousel-indicators .active {
+  background: $blue-moke;
+}
+
+.line-clamp {
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  margin: 0 0 1em 0;
+  overflow: hidden;
+  width: 230px;
+}
+
+.thumbnail{
+  -webkit-transition: all 0.5s; 
+  opacity:0.70;
+  transition: all 0.5s;
+}
+.thumbnail:hover{
+  box-shadow: 0px 0px 10px $blue-moke;
+  opacity:1.00;
+}
+.thumbnail h4{
+  font-weight: 600;
+}
+
+.thumbnail p{
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.thumbnail .price{
+  color: $gray-black;
+  font-size: 30px;
+  margin: 0 auto;
+}
+
+.right{
+  border-bottom: 2px solid $green;
+  float:right;
+}
+
+.line{
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 770px) {
+  .right{
+    float:left;
+    width: 100%;
+  }
+}
+
+.glyphicon-star {
+  color: $orange-moke;
+  font-size: 20px;
+  &.half {
+    position: relative;
+    &:before {
+      display: block;
+      overflow: hidden;
+      position: relative;
+      width: 47%;
+      z-index: 9;
+    }
+    &:after {
+      content: '\e006';
+      color: $unrate;
+      left: 0;
+      position: absolute;
+      top: 0;
+      z-index: 8;
+    }
+  };
+  &.uncheck {
+    color: $unrate;
+  }
+}

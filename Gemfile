@@ -20,6 +20,8 @@ gem "font-awesome-rails"
 gem "figaro"
 gem "omniauth-google-oauth2"
 gem "rails-i18n"
+gem "faker"
+gem "config"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

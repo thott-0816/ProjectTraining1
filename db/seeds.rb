@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Category.create!(
+  name: Faker::Name.name,
+  parent_id: nil,
+  description: Faker::Food.description
+)
+
+15.times do |i|
+  rate = Faker::Number.decimal(1, 1).to_f
+  if rate > 5
+    rate -= 5
+  end
+  Course.create!(
+    name: Faker::Name.name,
+    description: Faker::Food.description,
+    rate_average: rate,
+    thumbnail: "http://keenthemes.com/assets/bootsnipp/k1.jpg",
+    user_id: 1,
+    category_id: 1
+)
+end
