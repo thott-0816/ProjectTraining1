@@ -35,3 +35,14 @@ vi:
       edit:
         btn_change: "Thay đổi"
         change_pass: "Thay đổi mật khẩu"
+  layouts:
+    admin:
+      admin_header:
+        home: "Trang chủ"
+        user_profile: "Thông tin người dùng"
+        settings: "Cấu hình"
+        logout: "Đăng xuất"
+        dashboard: " Bảng điều khiển"
+        charts: " Biểu đồ"
+        tables: " Bảng dữ liệu"
+        form: " Biểu mẫu"
