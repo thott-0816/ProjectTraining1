@@ -4,3 +4,6 @@
 //= require turbolinks
 //= require metisMenu.min
 //= require sb-admin-2
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require datatable

@@ -26,6 +26,7 @@ gem "cancancan", "~> 2.0"
 gem "simple_form"
 gem "carrierwave"
 gem "mini_magick", "4.7.0"
+gem "jquery-datatables-rails", "~> 3.4.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

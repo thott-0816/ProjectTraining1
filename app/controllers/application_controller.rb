@@ -1,7 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+
   before_action :authenticate_user!
   before_action :set_locale
+
+  class << self
+    def default_url_options
+      {locale: I18n.locale}
+    end
+  end
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|

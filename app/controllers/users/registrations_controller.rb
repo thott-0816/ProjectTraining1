@@ -8,7 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     yield resource if block_given?
     if resource.persisted?
       if resource.active_for_authentication?
-        set_flash_message! :success, :signed_up
+        flash[:success] = t "devise.registrations.signed_up"
         sign_up(resource_name, resource)
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"

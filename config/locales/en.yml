@@ -60,7 +60,32 @@ en:
         description: "Description"
         thumbnail: "Thumbnail"
         none: "None"
+    users:
+      not_user: "user not found"
+      role:
+        student: "Student"
+        lecture: "Lecture"
+        admin: "Admin"
+      role: "Role"
+      index:
+        action: "Action"
+        title: "User list"
+      new:
+        title: "Add user"
+      edit:
+        title: "Update user"
+      create:
+        create_success: "User create success"
+      update:
+        update_success: "User update successful"
+      destroy:
+        destroy_success: "User delete success"
+        destroy_fail: "User delete fail"
   shared:
     error_messages:
       error: "error"
       the_form_contains: "The form contains"
+  button:
+    add: "Add"
+    edit: "Edit"
+    delete: "Delete"

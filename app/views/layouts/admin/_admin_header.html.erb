@@ -56,7 +56,14 @@
             </ul>
           </li>
           <li>
-            <a href="#"><i class="fa fa-table fa-fw"></i><%= t ".tables" %></a>
+            <a href="#"><i class="fa fa-table fa-fw"></i>
+              <%= t ".tables" %><span class="fa arrow"></span>
+            </a>
+            <ul class="nav nav-second-level">
+              <li>
+                <%= link_to t("admin.users.index.title"), admin_users_path %>
+              </li>
+            </ul>
           </li>
           <li>
             <a href="forms.html"><i class="fa fa-edit fa-fw"></i>
