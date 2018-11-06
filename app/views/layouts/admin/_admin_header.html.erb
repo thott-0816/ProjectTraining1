@@ -37,32 +37,48 @@
       <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
           <li>
-            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i><%= t ".dashboard" %></a>
+            <%= link_to admin_dashboards_path do %>
+              <i class="active fa fa-dashboard fa-fw"></i>
+              <%= t ".dashboard" %>
+            <% end %>
           </li>
           <li>
-            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i><%= t ".charts" %><span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
+              <%= t ".charts" %><span class="fa arrow"></span>
+            </a>
             <ul class="nav nav-second-level">
               <li>
-                <a href="flot.html"><%= t ".charts" %></a>
+                <a href="#"><%= t ".charts" %></a>
               </li>
               <li>
-                <a href="morris.html"><%= t ".charts" %></a>
+                <a href="#"><%= t ".charts" %></a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="tables.html"><i class="fa fa-table fa-fw"></i><%= t ".tables" %></a>
+            <a href="#"><i class="fa fa-table fa-fw"></i><%= t ".tables" %></a>
           </li>
           <li>
-            <a href="forms.html"><i class="fa fa-edit fa-fw"></i><%= t ".form" %></a>
+            <a href="forms.html"><i class="fa fa-edit fa-fw"></i>
+              <%= t ".form" %><span class="fa arrow"></span>
+            </a>
+            <ul class="nav nav-second-level">
+              <li>
+                <%= link_to t(".category"), new_admin_category_path %>
+              </li>
+            </ul>
           </li>
           <li>
-            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-wrench fa-fw">
+              </i> UI Elements<span class="fa arrow"></span>
+            </a>
             <ul class="nav nav-second-level">
             </ul>
           </li>
           <li>
-            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+            <a href="#"><i class="fa fa-sitemap fa-fw"></i>
+              Multi-Level Dropdown
+            <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 </ul>
               </li>

@@ -23,6 +23,9 @@ gem "rails-i18n"
 gem "faker"
 gem "config"
 gem "cancancan", "~> 2.0"
+gem "simple_form"
+gem "carrierwave"
+gem "mini_magick", "4.7.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
