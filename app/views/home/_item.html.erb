@@ -1,0 +1,19 @@
+<span class="thumbnail">
+  <img src="<%= item.thumbnail %>" alt="...">
+  <h4><%= item.name %></h4>
+  <div class="ratings">
+    <%= rate(item.rate_average).html_safe %>
+  </div>
+  <p class="line-clamp">
+  <%= item.description %>
+  </p>
+  <hr class="line">
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <p class="price">$29,90</p>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <button class="btn btn-success right" > BUY ITEM </button>
+    </div>
+  </div>
+</span>

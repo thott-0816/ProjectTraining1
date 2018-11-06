@@ -1,0 +1,14 @@
+<div class="container">
+  <h3><%= category.name %> <span class="label label-primary">New</span></h3>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="Carousel<%= category.id %>" class="carousel slide slide-item">
+      <div class="carousel-inner">
+        <%= render partial: "list_item", object: category.courses, as: "courses" %>
+      </div>
+      <a data-slide="prev" href="#Carousel<%= category.id %>" class="left carousel-control">‹</a>
+      <a data-slide="next" href="#Carousel<%= category.id %>" class="right carousel-control">›</a>
+      </div>
+    </div>
+  </div>
+</div>
