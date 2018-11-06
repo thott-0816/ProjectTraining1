@@ -35,3 +35,14 @@ en:
       edit:
         btn_change: "Change"
         change_pass: "Change password"
+  layouts:
+    admin:
+      admin_header:
+        home: "Home"
+        user_profile: "User Profile"
+        settings: "Settings"
+        logout: "Logout"
+        dashboard: " Dashboard"
+        charts: " Charts"
+        tables: " Tables"
+        form: " Forms"
