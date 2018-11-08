@@ -1,4 +1,7 @@
 en:
+  add_success_category: "Add new category successed!"
+  add_failed_category: "An error occurred while adding new category"
+  
   users:
     registrations:
       new:
@@ -46,3 +49,18 @@ en:
         charts: " Charts"
         tables: " Tables"
         form: " Forms"
+  admin:
+    categories:
+      new:
+        create: "Create"
+        new_category: "New category"
+      form:
+        select_category: "Select category"
+        category_name: "Category name"
+        description: "Description"
+        thumbnail: "Thumbnail"
+        none: "None"
+  shared:
+    error_messages:
+      error: "error"
+      the_form_contains: "The form contains"
