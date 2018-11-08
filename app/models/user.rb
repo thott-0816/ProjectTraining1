@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   enum role: {student: 0, lecture: 1, admin: 2}
 
+  def check_rating? course_id
+    ratings.where(course_id: course_id).present?
+  end
+
   class << self
     def from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

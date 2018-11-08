@@ -1,17 +1,17 @@
 @import 'colors';
 
 .action-sec{
-  position: relative;
-  bottom: 0%;
-  width:100%;
-  float:left;
   background:$gray-black;
+  bottom: 0%;
+  float:left;
   margin-bottom: 0px;
+  position: relative;
+  width:100%;
 }
 .action-box{
   float:left; 
-  width:100%; 
   text-align:center;
+  width:100%; 
 }
 .action-box h2{
   color:$white;
@@ -19,6 +19,6 @@
 }
 
 .main {
-  padding: 16px;
   margin-top: 50px;
+  padding: 16px;
 }

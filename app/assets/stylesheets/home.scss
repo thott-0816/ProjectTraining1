@@ -2,6 +2,11 @@
 
 body {
   background: $body-gray;
+  height:100%;
+  margin:0;
+  overflow-y: scroll;
+  padding:0;
+  position: relative;
 }
 
 .carousel {
@@ -78,6 +83,10 @@ body {
 
 .line{
   margin-bottom: 5px;
+}
+
+.select_rate {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 770px) {

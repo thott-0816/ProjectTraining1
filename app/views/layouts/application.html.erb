@@ -18,5 +18,6 @@
       <%= yield %>
     </div>
     <%= render "layouts/footer" unless current_user.nil? %>
+    <%= render "layouts/modal" unless current_user.nil? %>
   </body>
 </html>

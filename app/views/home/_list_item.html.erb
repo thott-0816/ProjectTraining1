@@ -3,7 +3,7 @@
     <div class="row">
       <% (i * Settings.collection_item).upto (upto_item i, courses.size) do |j| %>
         <div class="col-md-3 col-sm-6">
-          <%= render partial: "item", object: courses[j], as: "item" %>
+          <%= render partial: "item", object: courses[j], as: "course" %>
         </div>
       <% end %>
     </div>
