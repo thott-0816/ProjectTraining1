@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+    <div class="well well-sm">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 text-center">
+          <h1 class="rating-num">
+            <%= @course.rate_average %>
+          </h1>
+          <div class="rating">
+            <%= rate(@course.rate_average, @course.id).html_safe %>
+          </div>
+          <div>
+            <span class="glyphicon glyphicon-user"></span>
+            <%= ratings.size %> total
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="row rating-desc">
+            <%= render partial: "chart_rating", object: ratings, as: "ratings" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<% 5.downto(1) do |i| %>
+  <div class="col-xs-3 col-md-3 text-right">
+    <span class="glyphicon glyphicon-star"><%= i %></span>
+  </div>
+  <div class="col-xs-8 col-md-7">
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20"
+        aria-valuemin="0" aria-valuemax="100" 
+        style="width: <%= ratings.size == 0 ? 0 : (ratings.group_rating?[i].to_f / ratings.size * 100) %>%">
+        <span class="color-precent">
+          <%= ratings.size == 0 ? 0 : (ratings.group_rating?[i].to_f / ratings.size * 100).round(1) %>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-8 col-md-2">
+    <span><%= ratings.group_rating?[i] %></span>
+  </div>
+<% end %>

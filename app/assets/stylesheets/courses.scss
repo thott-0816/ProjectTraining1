@@ -1,0 +1,230 @@
+@import 'colors';
+
+.header {
+  background: $white;
+  margin-bottom: 50px;
+  padding-top: 60px;
+  padding: 20px 0;
+}
+
+.control-box h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.control-box {
+  background-color: $white;
+  border: 1px solid $white-gray;
+  padding: 15px;
+}
+
+.control-box .links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.control-box .links li {
+  margin-bottom: 10px;
+}
+
+.control-box .links li a {
+  color: $red;
+  text-decoration: underline;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.course-card {
+  margin-top: 10px;
+}
+
+#mNavbar {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.breadcrumb p {
+  color: $unrate;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.breadcrumb p a {
+  color: $red;
+}
+
+.main-content {
+  margin: 10px;
+}
+
+.main-content h6 {
+  color: $black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.main-content p {
+  color: $white-spray;
+  font-size: 17px;
+  line-height: 29px;
+  margin-bottom: 20px;
+}
+
+.main-content img {
+  display: block;
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+}
+
+.main-content h1 {
+  margin-bottom: 20px;
+}
+
+.glyphicon {
+  margin-right:5px;
+}
+
+.rating .glyphicon {
+  font-size: 22px;
+}
+
+.rating-num {
+  font-size: 54px;
+  margin-top:0px;
+}
+
+.progress {
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  text-align: left;
+}
+
+.rating-desc .col-md-3 {
+  padding-right: 0px;
+}
+
+.lesson {
+  cursor: pointer;
+}
+
+.lesson-item {
+  cursor: pointer;
+}
+
+.lesson-item:hover {
+  color: red;
+}
+
+.color-precent {
+  color: red;
+}
+
+.panel-white {
+  border: 1px solid $white-gray;
+}
+.panel-white  .panel-heading {
+  background-color: $white;
+  border-color: $white-gray;
+  color: $gray-black;
+}
+.panel-white  .panel-footer {
+  background-color: $white;
+  border-color: $white-gray;
+}
+
+.post .post-heading {
+  height: 95px;
+  padding: 20px 15px;
+}
+.post .post-heading .avatar {
+  display: block;
+  height: 60px;
+  margin-right: 15px;
+  width: 60px;
+}
+.post .post-heading .meta .title {
+  margin-bottom: 0;
+}
+.post .post-heading .meta .title a {
+  color: $black;
+}
+.post .post-heading .meta .title a:hover {
+  color: $white-a;
+}
+.post .post-heading .meta .time {
+  color: $white-a;
+  margin-top: 8px;
+}
+.post .post-image .image {
+  height: auto;
+  width: 100%;
+}
+.post .post-description {
+  padding: 15px;
+}
+.post .post-description p {
+  font-size: 14px;
+}
+.post .post-description .stats {
+  margin-top: 20px;
+}
+.post .post-description .stats .stat-item {
+  display: inline-block;
+  margin-right: 15px;
+}
+.post .post-description .stats .stat-item .icon {
+  margin-right: 8px;
+}
+.post .post-footer {
+  border-top: 1px solid $body-gray;
+  padding: 15px;
+}
+.post .post-footer .input-group-addon a {
+  color: #454545;
+}
+.post .post-footer .comments-list {
+  list-style-type: none;
+  margin-top: 20px;
+  padding: 0;
+}
+.post .post-footer .comments-list .comment {
+  display: block;
+  margin: 20px 0;
+  width: 100%;
+}
+.post .post-footer .comments-list .comment .avatar {
+  height: 35px;
+  width: 35px;
+}
+.post .post-footer .comments-list .comment .comment-heading {
+  display: block;
+  width: 100%;
+}
+.post .post-footer .comments-list .comment .comment-heading .user {
+  display: inline;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-top: 0;
+}
+.post .post-footer .comments-list .comment .comment-heading .time {
+  color: $white-a;
+  display: inline;
+  font-size: 12px;
+  margin-top: 0;
+}
+.post .post-footer .comments-list .comment .comment-body {
+  margin-left: 50px;
+}
+.post .post-footer .comments-list .comment > .comments-list {
+  margin-left: 50px;
+}

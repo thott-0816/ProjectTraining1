@@ -1,0 +1,55 @@
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="control-box">
+          <h2><%= @course.name %></h2>
+        </div>
+        <div class="control-box course-card sidebara">
+          <a href="carrinho.html">
+            <img src="<%= @course.thumbnail %>" class="img-responsive">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="control-box breadcrumb" id="mNavbar">
+          <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#infor">Informartion</a></li>
+            <li role="presentation"><a href="#lesson">Lesson</a></li>
+            <li role="presentation"><a href="#author">Authors</a></li>
+            <li role="presentation"><a href="#votes">Votes</a></li>
+          </ul>
+        </div>
+        <div class="control-box main-content" id="infor">
+          <p>
+            <%= @course.description %>
+          </p>
+        </div>
+        <div class="control-box main-content" id="lesson">
+          <p>
+            <%= render partial: "lesson", object: @course, as: "course" %>
+          </p>
+        </div>
+        <div class="control-box main-content" id="author">
+          <p>Authors Name: <%= @course.user_name %></p>
+          <p>Authors email: <%= @course.user_avatar %></p>
+          <p>Authors provider: <%= @course.user_provider %></p>
+        </div>
+        <div class="control-box main-content" id="votes">
+          <%= render partial: "rating", object: @list_ratings_comments.ratings, as: "ratings" %>
+        </div>
+        <div class="control-box main-content">
+          <div class="input-group"> 
+            <input class="form-control" placeholder="Add a comment" type="text">
+            <span class="input-group-addon">
+              <a href="#"><i class="fa fa-edit"></i></a>  
+            </span>
+          </div>
+        </div>
+        <% @list_ratings_comments.comments.parent_comment?.each do |comment| %>
+          <%= render partial: "comment", object: comment, as: "comment" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
