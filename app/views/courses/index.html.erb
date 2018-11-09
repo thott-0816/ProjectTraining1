@@ -7,7 +7,7 @@
         </div>
         <div class="control-box course-card sidebara">
           <a href="carrinho.html">
-            <img src="<%= @course.thumbnail %>" class="img-responsive">
+            <%= image_tag @course.thumbnail.url, class: "img-responsive" %>
           </a>
         </div>
       </div>

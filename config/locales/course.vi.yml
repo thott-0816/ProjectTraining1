@@ -1,0 +1,18 @@
+en:
+  course:
+    index:
+      action: "Hành động"
+      author: "Tác giả"
+      category: "Loại khóa học"
+      created_at: "Ngày tạo"
+      description: "Mô tả"
+      name: "Tên khóa học"
+      rate_average: "Đánh giá"
+      thumbnail: "Ảnh"
+      title: "Danh sách khóa học"
+    new:
+      description: "Nhập vào mô tả"
+      name: "Tên khóa học"
+      place_name: "Nhập vào tên khóa học"
+      submit: "Gửi"
+      title: "Khóa học"

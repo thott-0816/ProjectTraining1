@@ -46,15 +46,17 @@ en:
   layouts:
     admin:
       admin_header:
-        home: "Home"
-        user_profile: "User Profile"
-        settings: "Settings"
-        logout: "Logout"
-        dashboard: " Dashboard"
-        charts: " Charts"
-        tables: " Tables"
-        form: " Forms"
         category: "Category"
+        charts: " Charts"
+        course: "Course"
+        dashboard: " Dashboard"
+        form: " Forms"
+        home: "Home"
+        logout: "Logout"
+        settings: "Settings"
+        tables: " Tables"
+        user_profile: "User Profile"
+        index: "Index"
   admin:
     categories:
       category:
@@ -119,3 +121,4 @@ en:
     add: "Add"
     edit: "Edit"
     delete: "Delete"
+    are_you_sure: "Are you sure?"

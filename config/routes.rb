@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :users
       resources :categories
+      resources :courses
       get "/dashboards", to: "dashboards#index"
     end
   end
