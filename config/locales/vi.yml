@@ -1,6 +1,11 @@
 vi:
   add_failed_category: "Đã xảy ra lỗi trong quá trình thêm mới danh mục!"
   add_success_category: "Thêm mới danh mục thành công"
+  update_success: "Cập nhật thành công!"
+  update_failed: "Đã có lỗi xảy ra trong quá trình cập nhật!"
+  delete_failed: "Đã xảy ra lỗi trong quá trình xóa!"
+  delete_success: "Xóa thành công"
+  delete_warning: "Không thể xóa danh mục này vì vẫn còn tồn tại khóa học"
 
   users:
     registrations:
@@ -49,17 +54,39 @@ vi:
         charts: " Biểu đồ"
         tables: " Bảng dữ liệu"
         form: " Biểu mẫu"
+        category: "Danh mục"
   admin:
     categories:
+      category:
+        action: "Tùy chọn"
+        description: "Mô tả"
+        delete: "Xóa"
+        parent_category: "Danh mục cha"
+        name: "Tên danh mục"
+        edit: "Chỉnh sửa"
+        new: "Tạo mới"
+        sure: "Bạn có chắc muốn xóa danh mục này?"
+      edit:
+        update: "Cập nhật"
+        edit_category: "Chỉnh sửa danh mục"
+      index:
+        list_category: "Danh sách các danh mục"
+        add: "Tạo mới danh mục"
       new:
         create: "Tạo mới"
         new_category: "Tạo mới danh mục"
       form:
+        category: "danh mục"
         select_category: "Chọn danh mục"
         category_name: "Tên danh mục"
         description: "Mô tả danh mục"
         thumbnail: "Ảnh đại diện"
         none: "Không có"
+      show:
+        course: "Khóa học"
+        description: "Mô tả"
+        lecture: "Giảng viên"
+        rating: "Đánh giá"
     users:
       not_user: "Không tìm thấý người dùng"
       role:
@@ -81,6 +108,9 @@ vi:
       destroy:
         destroy_success: "Xóa người dùng thành công"
         destroy_fail: "Xóa người dùng thất bại"
+      edit:
+        edit_category: "Chỉnh sửa danh mục"
+        update: "Cập nhật"
   shared:
     error_messages:
       error: "lỗi"

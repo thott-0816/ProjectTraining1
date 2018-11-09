@@ -1,7 +1,12 @@
 en:
   add_success_category: "Add new category successed!"
   add_failed_category: "An error occurred while adding new category"
-  
+  update_success: "Update Successful!"
+  update_failed: "An error has occurred while updating!"
+  delete_failed: "An error has occurred while deleting!"
+  delete_success: "Delete Successful!"
+  delete_warning: "Can't delete because exist of product in category"
+
   users:
     registrations:
       new:
@@ -49,17 +54,39 @@ en:
         charts: " Charts"
         tables: " Tables"
         form: " Forms"
+        category: "Category"
   admin:
     categories:
+      category:
+        action: "Action"
+        description: "Description"
+        delete: "Delete"
+        parent_category: "Parent category"
+        name: "Name"
+        edit: "Edit"
+        new: "New"
+        sure: "Are you sure?"
+      edit:
+        update: "Update"
+        edit_category: "Edit category"
+      index:
+        list_category: "Category list"
+        add: "Add new category"
       new:
         create: "Create"
         new_category: "New category"
       form:
+        category: "category"
         select_category: "Select category"
         category_name: "Category name"
         description: "Description"
         thumbnail: "Thumbnail"
         none: "None"
+      show:
+        course: "Course"
+        description: "Description"
+        lecture: "Lecture"
+        rating: "Rating"
     users:
       not_user: "user not found"
       role:
@@ -81,6 +108,9 @@ en:
       destroy:
         destroy_success: "User delete success"
         destroy_fail: "User delete fail"
+      edit:
+        update: "Update"
+        edit_category: "Update category"
   shared:
     error_messages:
       error: "error"
