@@ -1,0 +1,8 @@
+<% if @user.errors.any? %>
+  $('.error-message').addClass('alert alert-danger');
+  $('.error-message').html('<% @user.errors.full_messages.each do |msg| %>\
+    - <%= msg %><br>\
+  <% end %>');
+<% else %>
+  window.location.href = '<%= admin_users_path %>';
+<% end %>

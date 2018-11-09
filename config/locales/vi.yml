@@ -60,7 +60,32 @@ vi:
         description: "Mô tả danh mục"
         thumbnail: "Ảnh đại diện"
         none: "Không có"
+    users:
+      not_user: "Không tìm thấý người dùng"
+      role:
+        student: "Học viên"
+        lecture: "Giáo viên"
+        admin: "Quản trị viên"
+      role: "Vai trò"
+      index:
+        action: "Thao tác"
+        title: "Danh sách người dùng"
+      new:
+        title: "Thêm người dùng"
+      edit:
+        title: "Cập nhật người dùng"
+      create:
+        create_success: "Tạo người dùng thành công"
+      update:
+        update_success: "Cập nhật người dùng thành công"
+      destroy:
+        destroy_success: "Xóa người dùng thành công"
+        destroy_fail: "Xóa người dùng thất bại"
   shared:
     error_messages:
       error: "lỗi"
       the_form_contains: "Thông báo lỗi"
+  button:
+    add: "Thêm"
+    edit: "Sửa"
+    delete: "Xóa"
