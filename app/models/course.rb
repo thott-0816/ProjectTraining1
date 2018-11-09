@@ -10,8 +10,7 @@ class Course < ApplicationRecord
   belongs_to :category
   belongs_to :user
 
-  validates :name, presence: true, uniqueness: true
-  validates :thumbnail, presence: true
+  validates :name, presence: true
 
   delegate :name, :avatar, :provider, :email, to: :user, prefix: :user
   delegate :name, to: :category, prefix: :category
@@ -20,11 +19,11 @@ class Course < ApplicationRecord
     :rate_average, :thumbnail, :user_id, :category_id, :created_at, :slug }
 
   scope :list_ratings_comment?, (lambda do |course_id|
-    eager_load(:ratings, :comments).find_by id: course_id
+    eager_load(:ratings, :comments).friendly.find_by_slug course_id
   end)
 
   scope :by_name, (lambda do |name|
-    ransack(name_eq: name).result
+    ransack(name_cont: name).result
   end)
 
   scope :by_category, (lambda do |category_id|

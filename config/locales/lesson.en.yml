@@ -1,0 +1,17 @@
+en:
+  lesson:
+    index:
+      courses: "Courses"
+      add: "Add lesson"
+      lesson_name: "Lesson name"
+      video: "Video"
+      created_at: "Created at"
+      action: "Action"
+      sure: "Are you sure delete this lesson"
+      delete: "Delete"
+    new:
+      new_lesson: "New lesson"
+      lesson: "Lesson"
+      enter_name: "Enter lesson name"
+      submit: "Submit"
+      course: "Course: "

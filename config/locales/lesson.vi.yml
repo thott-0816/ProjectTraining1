@@ -1,0 +1,17 @@
+vi:
+  lesson:
+    index:
+      courses: "Các khóa học"
+      add: "Thêm bài học"
+      lesson_name: "Tên bài học"
+      video: "Video"
+      created_at: "Ngày khởi tạo"
+      action: "Tùy chọn"
+      sure: "Bạn có chắc chắn muốn xóa bài học này"
+      delete: "Xóa"
+    new:
+      new_lesson: "Thêm mới bài học"
+      lesson: "Bài học"
+      enter_name: "Nhập tên bài học"
+      submit: "Thêm mới"
+      course: "Khóa học: "

@@ -13,7 +13,7 @@
       <tbody>
         <% @category.courses.each do |course| %>
           <tr>
-            <td><%= course.name %></td>
+            <td><%= link_to course.name, admin_course_lessons_path(course) %></td>
             <td><%= course.description %></td>
             <td><%= link_to course.user_name, admin_user_path %></td>
             <td><%= course.rate_average %></td>

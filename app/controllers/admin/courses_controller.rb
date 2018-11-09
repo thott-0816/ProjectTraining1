@@ -7,18 +7,18 @@ class Admin::CoursesController < Admin::ApplicationController
   def create
     @course = current_user.courses.build course_params
     if @course.save
-      flash[:success] = t ".create_success"
+      flash[:success] = t "create_success"
     else
-      flash[:danger] = t ".create_fail"
+      flash[:danger] = t "create_failed"
     end
   end
 
   def destroy
     if @courses.destroy
-      flash[:success] = t ".destroy_success"
+      flash[:success] = t "delete_success"
       redirect_to admin_courses_path
     else
-      flash[:danger] = t ".destroy_fail"
+      flash[:danger] = t "delete_failed"
       redirect_to admin_courses_path
     end
   end
@@ -32,10 +32,11 @@ class Admin::CoursesController < Admin::ApplicationController
   def show; end
 
   def update
-    flash[:success] = t ".update_success" if @course.update course_params
+    flash[:success] = t "update_success" if @course.update course_params
   end
 
   private
+
   def init_course
     @course = Course.new
   end
@@ -55,7 +56,7 @@ class Admin::CoursesController < Admin::ApplicationController
   def load_course
     @course = Course.friendly.find_by_slug params[:id]
     unless @course
-      flash[:danger] = t ".course_not_found"
+      flash[:danger] = t "course_not_found"
       redirect_to admin_courses_path
     end
   end
