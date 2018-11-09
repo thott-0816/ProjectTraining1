@@ -31,9 +31,7 @@
           </p>
         </div>
         <div class="control-box main-content" id="author">
-          <p>Authors Name: <%= @course.user_name %></p>
-          <p>Authors email: <%= @course.user_avatar %></p>
-          <p>Authors provider: <%= @course.user_provider %></p>
+          <%= render "author" %>
         </div>
         <div class="control-box main-content" id="votes">
           <%= render partial: "rating", object: @list_ratings_comments.ratings, as: "ratings" %>

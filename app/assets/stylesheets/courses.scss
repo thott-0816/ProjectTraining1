@@ -228,3 +228,14 @@
 .post .post-footer .comments-list .comment > .comments-list {
   margin-left: 50px;
 }
+
+small {
+  display: block;
+  line-height: 1.428571429;
+  color: $white-gray;
+}
+
+.img-author {
+  width: 160px;
+  height: 160px;
+}

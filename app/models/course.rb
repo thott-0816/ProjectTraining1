@@ -5,10 +5,10 @@ class Course < ApplicationRecord
   belongs_to :category
   belongs_to :user
 
-  delegate :name, :avatar, :provider, to: :user, prefix: :user
+  delegate :name, :avatar, :provider, :email, to: :user, prefix: :user
 
   scope :list_ratings_comment?, (lambda do |course_id|
-    eager_load(:ratings, :comments).find course_id
+    eager_load(:ratings, :comments).find_by id: course_id
   end)
 
   def list_lessons?
