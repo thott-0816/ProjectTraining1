@@ -68,6 +68,7 @@ en:
         edit: "Edit"
         new: "New"
         sure: "Are you sure?"
+        new_course: "New course"
       edit:
         update: "Update"
         edit_category: "Edit category"

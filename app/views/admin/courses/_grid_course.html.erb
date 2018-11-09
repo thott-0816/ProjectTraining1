@@ -1,8 +1,8 @@
 <% @courses.each do |course| %>
   <tr class="odd gradeX">
     <td><%= link_to course.name, edit_admin_course_path(course) %>
-    <td><%= course.user_name %></td>
-    <td><%= course.category_name %></td>
+    <td><%= link_to course.user_name, admin_user_path(course.user) %></td>
+    <td><%= link_to course.category_name, admin_category_path(course.category) %></td>
     <td><%= course.description %></td>
     <td class="text-center"><%= course.rate_average %></td>
     <td><%= course.created_at.strftime("%m/%d/%Y") %></td>

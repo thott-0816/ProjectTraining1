@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :slug
 
   before_action :get_category, only: [:show, :edit, :update, :destroy]
 
@@ -65,7 +65,7 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def get_category
-    redirect_to root_url unless @category = Category.find_by(id: params[:id])
+    redirect_to root_url unless @category = Category.friendly.find_by_slug(params[:id])
   end
 
   def message_category

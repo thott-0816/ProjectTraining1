@@ -1,4 +1,7 @@
 class Category < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   mount_uploader :thumbnail, ImageUploader
 
   has_many :courses, dependent: :destroy
@@ -11,13 +14,17 @@ class Category < ApplicationRecord
 
   scope :list_all_categories?, -> { eager_load(:courses) }
   scope :roots, -> parent_id{where(parent_id: parent_id)}
-  scope :get_all_category, -> {select(:id, :name, :parent_id, :description)}
+  scope :get_all_category, -> {select(:id, :name, :parent_id, :description, :slug)}
 
   def descendents
-    self.children || self.children.map(&:descendents).flatten
+    children || self.children.map(&:descendents).flatten
   end
 
   def has_courses?
     courses.present?
+  end
+
+  def should_generate_new_friendly_id?
+    name_changed? || super
   end
 end

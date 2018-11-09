@@ -3,10 +3,10 @@ class CoursesController < ApplicationController
 
   def index
   end
-  
+
   private
   def load_course
-    @course = Course.find_by id: params[:id]
+    @course = Course.friendly.find_by_slug params[:id]
     @list_ratings_comments = Course.list_ratings_comment? params[:id]
     unless @course
       flash[:danger] = "error"

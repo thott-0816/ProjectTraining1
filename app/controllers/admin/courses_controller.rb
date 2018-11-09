@@ -1,9 +1,9 @@
 class Admin::CoursesController < Admin::ApplicationController
-  load_and_authorize_resource
-  before_action :init_course, only: :new  
+  load_and_authorize_resource find_by: :slug
+  before_action :init_course, only: :new
   before_action :load_all_course, only: :index
   before_action :load_course, only: %i(edit update destroy)
-  
+
   def create
     @course = current_user.courses.build course_params
     if @course.save
@@ -12,7 +12,7 @@ class Admin::CoursesController < Admin::ApplicationController
       flash[:danger] = t ".create_fail"
     end
   end
-  
+
   def destroy
     if @courses.destroy
       flash[:success] = t ".destroy_success"
@@ -26,7 +26,7 @@ class Admin::CoursesController < Admin::ApplicationController
   def edit; end
 
   def index; end
-  
+
   def new; end
 
   def show; end
@@ -41,7 +41,7 @@ class Admin::CoursesController < Admin::ApplicationController
   end
 
   def course_params
-    params.require(:course).permit :name, :description, :rate_average, :thumbnail, :category_id 
+    params.require(:course).permit :name, :description, :rate_average, :thumbnail, :category_id
   end
 
   def load_all_course
@@ -51,9 +51,9 @@ class Admin::CoursesController < Admin::ApplicationController
               .by_author(params[:author_id])
               .by_description(params[:description])
   end
-  
+
   def load_course
-    @course = Course.find_by id: params[:id]
+    @course = Course.friendly.find_by_slug params[:id]
     unless @course
       flash[:danger] = t ".course_not_found"
       redirect_to admin_courses_path
