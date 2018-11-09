@@ -6,7 +6,11 @@ class CoursesController < ApplicationController
   
   private
   def load_course
-    @course = Course.find params[:id]
+    @course = Course.find_by id: params[:id]
     @list_ratings_comments = Course.list_ratings_comment? params[:id]
+    unless @course
+      flash[:danger] = "error"
+      redirect_to root_path
+    end
   end
 end
