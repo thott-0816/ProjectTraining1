@@ -1,0 +1,35 @@
+<table class="table table-hover table-bordered datatable">
+  <thead class="text-center">
+    <tr>
+      <th><%= t ".name" %></th>
+      <th><%= t ".parent_category" %></th>
+      <th><%= t ".description" %></th>
+      <th><%= t ".action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, admin_category_path(category) %></td>
+        <td><%= link_to category.parent.name,
+          admin_category_path(category.parent) if category.parent.present? %></td>
+        <td><%= category.description if category.description.present? %></td>
+        <td>
+          <%= link_to new_admin_category_path(parent_id: category.id),
+            class: "btn btn-success" do %>
+            <i class="fa fa-file"></i> <%= t ".new"%>
+          <% end %>
+          <%= link_to edit_admin_category_path(category,
+            parent_id: category.parent_id), class: "btn btn-warning" do %>
+            <i class="fa fa-pencil"></i> <%= t ".edit"%>
+          <% end %>
+          <%= link_to admin_category_path(category),
+            method: :delete, data: {confirm: t(".sure"), id: category.id},
+            class: "btn btn-danger btn-rounded" do %>
+              <i class="fa fa-trash"></i> <%= t ".delete" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
