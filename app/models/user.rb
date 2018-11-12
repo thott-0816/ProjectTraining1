@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   enum role: {student: 0, lecture: 1, admin: 2}
 
+  scope :can_post_course, -> { where(role: roles.except(:student).values).collect{|user| [user.name, user.id]} }
+
   def check_rating? course_id
     ratings.where(course_id: course_id).present?
   end

@@ -46,6 +46,10 @@ class Admin::CoursesController < Admin::ApplicationController
 
   def load_all_course
     @courses = Course.list_all?
+              .by_name(params[:name])
+              .by_category(params[:category_id])
+              .by_author(params[:author_id])
+              .by_description(params[:description])
   end
   
   def load_course
