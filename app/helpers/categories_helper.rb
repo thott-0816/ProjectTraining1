@@ -10,4 +10,8 @@ module CategoriesHelper
     end
     array
   end
+
+  def options_author
+    User.can_post_course
+  end
 end
