@@ -46,15 +46,17 @@ vi:
   layouts:
     admin:
       admin_header:
-        home: "Trang chủ"
-        user_profile: "Thông tin người dùng"
-        settings: "Cấu hình"
-        logout: "Đăng xuất"
-        dashboard: " Bảng điều khiển"
-        charts: " Biểu đồ"
-        tables: " Bảng dữ liệu"
-        form: " Biểu mẫu"
         category: "Danh mục"
+        charts: " Biểu đồ"
+        course: "Khóa học"
+        dashboard: " Bảng điều khiển"
+        form: " Biểu mẫu"
+        home: "Trang chủ"
+        logout: "Đăng xuất"
+        settings: "Cấu hình"
+        tables: " Bảng dữ liệu"
+        user_profile: "Thông tin người dùng"
+        index: "Danh mục"
   admin:
     categories:
       category:
@@ -119,3 +121,4 @@ vi:
     add: "Thêm"
     edit: "Sửa"
     delete: "Xóa"
+    are_you_sure: "Bạn có chắc chắn muốn thực hiện?"

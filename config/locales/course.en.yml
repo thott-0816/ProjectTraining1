@@ -1,0 +1,18 @@
+en:
+  course:
+    index:
+      action: "Action"
+      author: "Author"
+      category: "Category"
+      created_at: "Created at"
+      description: "Description"
+      name: "Name"
+      rate_average: "Rate average"
+      thumbnail: "Thumbnail"
+      title: "List course"
+    new:
+      description: "Enter description"
+      name: "Name"
+      place_name: "Enter course name"
+      submit: "Submit"
+      title: "Course"
