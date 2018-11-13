@@ -8,6 +8,7 @@ en:
   delete_warning: "Can't delete because exist of product in category"
 
   users:
+    avatar_size_error: "should be less than 5MB"
     registrations:
       new:
         sign_up: "Sign up"
@@ -22,6 +23,12 @@ en:
         facebook: "Facebook"
         google: "Google"
         sign_in: "Sign in"
+      edit:
+        change_info: "User profile"
+        change_pass: "Change password"
+        current_pass: "Current password"
+        new_pass: "New password"
+        confirm_new_pass: "New password confirmation"
     sessions:
       new:
         sign_in: "Sign in"
