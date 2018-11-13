@@ -11,8 +11,14 @@ en:
       thumbnail: "Thumbnail"
       title: "List course"
     new:
-      description: "Enter description"
+      description: "Description"
+      description_ph: "Enter description"
       name: "Name"
       place_name: "Enter course name"
       submit: "Submit"
       title: "Course"
+      new_course: "New course"
+      category: "Category"
+      select_category: "Select category"
+    edit:
+      edit_course: "Edit course"

@@ -66,6 +66,9 @@
               <li>
                 <%= link_to t(".category"), admin_categories_path %>
               </li>
+              <li>
+                <%= link_to t(".course"), admin_courses_path %>
+              </li>
             </ul>
           </li>
           <li>
@@ -76,16 +79,8 @@
               <li>
                 <%= link_to t(".category"), new_admin_category_path %>
               </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-book"></i>
-              <%= t ".course" %><span class="fa arrow"></span>
-            </a>
-            <ul class="nav nav-second-level">
               <li>
-                <%= link_to t(".index"), admin_courses_path %>
+                <%= link_to t(".course"), new_admin_course_path %>
               </li>
             </ul>
           </li>

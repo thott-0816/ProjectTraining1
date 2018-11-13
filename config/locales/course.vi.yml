@@ -1,4 +1,4 @@
-en:
+vi:
   course:
     index:
       action: "Hành động"
@@ -11,8 +11,14 @@ en:
       thumbnail: "Ảnh"
       title: "Danh sách khóa học"
     new:
-      description: "Nhập vào mô tả"
+      description: "Mô tả"
+      description_ph: "Nhập vào mô tả"
       name: "Tên khóa học"
       place_name: "Nhập vào tên khóa học"
       submit: "Gửi"
       title: "Khóa học"
+      new_course: "Thêm mới khóa học"
+      category: "Thể loại"
+      select_category: "Chọn thể loại"
+    edit:
+      edit_course: "Chỉnh sửa khóa học"

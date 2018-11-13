@@ -14,10 +14,14 @@
         <td><%= link_to category.parent.name,
           admin_category_path(category.parent) if category.parent.present? %></td>
         <td><%= category.description if category.description.present? %></td>
-        <td>
+        <td class="text-center">
           <%= link_to new_admin_category_path(parent_id: category.id),
             class: "btn btn-success" do %>
             <i class="fa fa-file"></i> <%= t ".new"%>
+          <% end %>
+          <%= link_to new_admin_course_path(parent_id: category.id),
+            class: "btn btn-primary" do %>
+            <i class="fa fa-book"></i> <%= t ".new_course"%>
           <% end %>
           <%= link_to edit_admin_category_path(category,
             parent_id: category.parent_id), class: "btn btn-warning" do %>

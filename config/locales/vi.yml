@@ -68,6 +68,7 @@ vi:
         edit: "Chỉnh sửa"
         new: "Tạo mới"
         sure: "Bạn có chắc muốn xóa danh mục này?"
+        new_course: "Thêm khóa học"
       edit:
         update: "Cập nhật"
         edit_category: "Chỉnh sửa danh mục"
