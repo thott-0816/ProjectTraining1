@@ -19,7 +19,11 @@
     <% @users.each do |u| %>
       <tr>
         <td>
-          <%= u.avatar if u.avatar.present? %>
+          <% if u.avatar.url.present? %>
+            <%= image_tag u.avatar.url, class: "circular-avatar"%>
+          <% else %>
+            <%= image_tag "default_avatar_small" %>
+          <% end %>
           <%= u.name %>
         </td>
         <td><%= u.email %></td>

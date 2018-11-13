@@ -14,7 +14,7 @@
 }
 
 .pass-form {
-  width: 340px;
+  max-width: 500px;
   margin: 50px auto;
 
   form {
@@ -43,4 +43,45 @@ h2.title {
   font-size: 30px;
   font-weight: bold;
   color: $gray;
+}
+
+.change-avatar {
+  position: relative;
+  width: 100%;
+   .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+    
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+.hidden {
+  display: none !important;
+}
+
+.change-avatar:hover .image {
+  opacity: 0.3;
+}
+
+.change-avatar:hover .middle {
+  opacity: 1;
+}
+
+.circular-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
 }

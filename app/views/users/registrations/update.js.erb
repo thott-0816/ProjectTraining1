@@ -1,0 +1,10 @@
+<% if resource.errors.any? %>
+  $('.error-message').addClass('alert alert-danger');
+  $('.error-message').html('<% resource.errors.full_messages.each do |msg| %>\
+    - <%= msg %><br>\
+  <% end %>');
+<% elsif current_user.admin? %>
+  window.location.href = '<%= admin_dashboards_path %>';
+<% else %>
+  window.location.href = '<%= root_path %>';
+<% end %>

@@ -8,6 +8,7 @@ vi:
   delete_warning: "Không thể xóa danh mục này vì vẫn còn tồn tại khóa học"
 
   users:
+    avatar_size_error: "phải nhỏ hơn 5MB"
     registrations:
       new:
         sign_up: "Đăng ký"
@@ -22,6 +23,12 @@ vi:
         facebook: "Facebook"
         google: "Google"
         sign_in: "Đăng nhập"
+      edit:
+        change_info: "Thông tin người dùng"
+        change_pass: "Thay đổi mật khẩu"
+        current_pass: "Mật khẩu hiện tại"
+        new_pass: "Mật khẩu mới"
+        confirm_new_pass: "Xác nhận mật khẩu mới"
     sessions:
       new:
         sign_in: "Đăng nhập"
