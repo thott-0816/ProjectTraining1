@@ -1,0 +1,12 @@
+<li class="comment">
+  <a class="pull-left" href="#">
+    <%= image_tag child_comment.user_avatar.url ? child_comment.user_avatar.url : "" , class: "avatar" %>
+  </a>
+  <div class="comment-body">
+    <div class="comment-heading">
+      <h4 class="user"><%= child_comment.user_name %></h4>
+      <h5 class="time"><%= time_ago_in_words(child_comment.created_at) %></h5>
+    </div>
+    <p><%= child_comment.content %></p>
+  </div>
+</li>

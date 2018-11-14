@@ -20,5 +20,11 @@ vi:
       new_course: "Thêm mới khóa học"
       category: "Thể loại"
       select_category: "Chọn thể loại"
+    create:
+      success: "Thành công!"
+      failed: "Thất bại"
+    show:
+      create_comment: "Đã bình luận"
+      holder_text: "Nhập vào bình luận"
     edit:
       edit_course: "Chỉnh sửa khóa học"

@@ -20,5 +20,11 @@ en:
       new_course: "New course"
       category: "Category"
       select_category: "Select category"
+    create:
+      success: "Successful!"
+      failed: "False"
+    show:
+      create_comment: "create a comment"
+      holder_text: "Input to comment"
     edit:
       edit_course: "Edit course"

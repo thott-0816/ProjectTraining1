@@ -1,0 +1,18 @@
+<% if @commentrate.errors.any? %>
+  alert(I18n.t("course.create.failed"));
+<% elsif @commentrate.rating.present? %>
+  $('#write-comment').remove();
+  $('#comments').prepend("<%= j render 'comment', comment: Comment.user_comment_course(@commentrate) %>");
+<% else %>
+  var count_cmt = $('#count-cmt-<%= @commentrate.parent_id %>');
+  count_cmt.text(parseInt(count_cmt.text()) + 1);
+  $('.list-<%= @commentrate.parent_id %>').append("<%= j render 'child_comment', child_comment: Comment.user_comment_course(@commentrate) %>");
+<% end %>
+
+<% unless @commentrate.errors.any? %>
+  $('input[type=text]').val('');
+  var rating = '<%= @commentrate.rating %>';
+  if(rating != ''){
+    change_rate(rating);
+  }
+<% end %>

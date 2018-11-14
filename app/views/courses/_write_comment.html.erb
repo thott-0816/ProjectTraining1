@@ -1,0 +1,25 @@
+<%= form_for @commentrate, url: courses_path, method: :POST, remote: true do |f| %>
+  <%= f.hidden_field :course_id, value: comment.nil? ? @course.id : comment.course_id %>
+  <%= f.hidden_field :parent_id, value: comment.nil? ? nil : comment.id %>
+  <% unless comment %>
+    <div class="rate-cmt">
+      <span class="star-cb-group">
+        <%= f.radio_button :rating, 5, class: "selected", id: "rating-5", checked: true %><label for="rating-5">5</label>
+        <%= f.radio_button :rating, 4, class: "selected", id: "rating-4" %><label for="rating-4">4</label>
+        <%= f.radio_button :rating, 3, class: "selected", id: "rating-3" %><label for="rating-3">3</label>
+        <%= f.radio_button :rating, 2, class: "selected", id: "rating-2" %><label for="rating-2">2</label>
+        <%= f.radio_button :rating, 1, class: "selected", id: "rating-1" %><label for="rating-1">1</label>
+      </span>
+    </div>
+  <% else %>
+    <%= f.hidden_field :rating, value: nil %>
+  <% end %>
+  <div class="input-group">
+    <%= f.text_field :content, id: "txt-comment", class: "form-control", placeholder: t("course.show.holder_text"), required: true %> 
+    <span class="input-group-addon">
+      <button class="btn-success" id="btn-comment" type="submit">
+        <i class="fa fa-edit"></i>
+      </button>
+    </span>
+  </div>
+<% end %>
