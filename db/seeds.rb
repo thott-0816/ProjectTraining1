@@ -2,7 +2,16 @@ User.create!(
   name: "admin",
   email: "admin@gmail.com",
   password: "123456",
-  role: "admin"
+  role: "admin",
+  avatar: File.open(File.join(Rails.root, "app/assets/images/default_avatar_big.png"))
+)
+
+User.create!(
+  name: "hihi",
+  email: "user@gmail.com",
+  password: "123456",
+  role: "student",
+  avatar: File.open(File.join(Rails.root, "app/assets/images/doremon.jpg"))
 )
 
 Category.create!(
@@ -20,7 +29,7 @@ Category.create!(
     name: Faker::Name.name,
     description: Faker::Food.description,
     rate_average: rate,
-    thumbnail: File.open(File.join(Rails.root, "app/assets/images/default_avatar_big.png")),
+    thumbnail: File.open(File.join(Rails.root, "app/assets/images/default.jpg")),
     user_id: 1,
     category_id: 1
 )
@@ -47,7 +56,7 @@ end
 5.times do |i|
   Lesson.create!(
     name: Faker::LeagueOfLegends.champion,
-    video_url: "http://res.cloudinary.com/olalalala/video/upload/v1541637860/flgmnhf4lbolzwe9ec6j.mp4",
+    video_url: File.open(File.join(Rails.root, "app/assets/images/video.mp4")),
     course_id: 1
   )
 end

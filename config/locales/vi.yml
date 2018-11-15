@@ -67,6 +67,9 @@ vi:
         tables: " Bảng dữ liệu"
         user_profile: "Thông tin người dùng"
         index: "Danh mục"
+    header:
+      home: "Trang chủ"
+      logout: "Đăng xuất"
   admin:
     categories:
       category:

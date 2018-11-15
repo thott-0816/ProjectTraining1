@@ -19,7 +19,7 @@ class CoursesController < ApplicationController
 
   def load_course
     @course = Course.friendly.find_by_slug params[:id]
-    @list_ratings_comments = Course.list_ratings_comment? @course.id
+    @list_ratings_comments = Course.list_ratings_comment? params[:id]
     @commentrate = CommentRate.new
     unless @course
       flash[:danger] = "error"
