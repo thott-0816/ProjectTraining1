@@ -3,15 +3,15 @@
     <div class="well well-sm">
       <div class="row">
         <div class="col-xs-12 col-md-6 text-center">
-          <h1 class="rating-num">
+          <h1 class="rating-num" id="rating-average">
             <%= @course.rate_average %>
           </h1>
           <div class="rating">
-            <%= rate(@course.rate_average, @course.id).html_safe %>
+            <%= rate(@course.rate_average).html_safe %>
           </div>
           <div>
             <span class="glyphicon glyphicon-user"></span>
-            <%= ratings.size %> total
+            <span id="total-quantity-rating"><%= ratings.size %></span> total
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
@@ -22,3 +22,4 @@
       </div>
     </div>
   </div>
+</div>

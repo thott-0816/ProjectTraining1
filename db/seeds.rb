@@ -1,3 +1,10 @@
+User.create!(
+  name: "admin",
+  email: "admin@gmail.com",
+  password: "123456",
+  role: "admin"
+)
+
 Category.create!(
   name: Faker::Name.name,
   parent_id: nil,
@@ -13,7 +20,7 @@ Category.create!(
     name: Faker::Name.name,
     description: Faker::Food.description,
     rate_average: rate,
-    thumbnail: "http://keenthemes.com/assets/bootsnipp/k1.jpg",
+    thumbnail: File.open(File.join(Rails.root, "app/assets/images/default_avatar_big.png")),
     user_id: 1,
     category_id: 1
 )

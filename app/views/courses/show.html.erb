@@ -36,17 +36,17 @@
         <div class="control-box main-content" id="votes">
           <%= render partial: "rating", object: @list_ratings_comments.ratings, as: "ratings" %>
         </div>
-        <div class="control-box main-content">
-          <div class="input-group"> 
-            <input class="form-control" placeholder="Add a comment" type="text">
-            <span class="input-group-addon">
-              <a href="#"><i class="fa fa-edit"></i></a>  
-            </span>
+        <% unless current_user.check_rating? @course.id %>
+          <div class="control-box main-content" id="write-comment">
+            <%= render "write_comment", comment: nil %>
           </div>
-        </div>
-        <% @list_ratings_comments.comments.parent_comment?.each do |comment| %>
-          <%= render partial: "comment", object: comment, as: "comment" %>
         <% end %>
+        <div id="comments">
+          <% @list_ratings_comments.comments.parent_comment?.each do |comment| %>
+            <%= render partial: "comment", object: comment, as: "comment" %>
+          <% end %>
+        </div>
+
       </div>
     </div>
   </div>
