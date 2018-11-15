@@ -11,6 +11,16 @@ vi:
   course_not_found: "Không tìm thấy khóa học phù hợp"
 
   users:
+    show:
+      acount_settings: "Thiết lập tài khoản"
+      course: "Khóa học:"
+      follow: "Theo dõi"
+      load_more: "Xem thêm"
+      message: "Nhắn tin"
+      review: "Lượt đánh giá:"
+      taught_by: "Khóa học được đăng bởi "
+      total_student: "Tổng số học sinh:"
+      write_something: "Nhấn Thiết lập tài khoản để giới thiệu về bản thân..."
     avatar_size_error: "phải nhỏ hơn 5MB"
     registrations:
       new:
@@ -70,6 +80,7 @@ vi:
     header:
       home: "Trang chủ"
       logout: "Đăng xuất"
+      my_course: "Khóa học của tôi"
   admin:
     categories:
       category:
@@ -128,6 +139,8 @@ vi:
         edit_category: "Chỉnh sửa danh mục"
         update: "Cập nhật"
   shared:
+    course:
+      buy_course: "Mua khóa học"
     error_messages:
       error: "lỗi"
       the_form_contains: "Thông báo lỗi"

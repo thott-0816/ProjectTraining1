@@ -34,7 +34,10 @@
         <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li class="username-header"><%= link_to current_user.name, user_path(current_user) if user_signed_in? %></li>
+        <% unless current_user.role == "student" %>
+          <li><%= link_to t(".my_course"), courses_path %></a></li>
+        <% end %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">

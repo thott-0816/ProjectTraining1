@@ -11,6 +11,16 @@ en:
   course_not_found: "No matching course found"
 
   users:
+    show:
+      acount_settings: "Account settings"
+      course: "Courses:"
+      follow: "FOLLOW"
+      load_more: "Load more"
+      message: "MESSAGE"
+      review: "Reviews:"
+      taught_by: "Course taught by"
+      total_student: "Total Students:"
+      write_something: "Click Account Settings to write something about yourself..."
     avatar_size_error: "should be less than 5MB"
     registrations:
       new:
@@ -70,6 +80,7 @@ en:
     header:
       home: "Home"
       logout: "Logout"
+      my_course: "My Course"
   admin:
     categories:
       category:
@@ -128,6 +139,8 @@ en:
         update: "Update"
         edit_category: "Update category"
   shared:
+    course:
+      buy_course: "Buy course"
     error_messages:
       error: "error"
       the_form_contains: "The form contains"

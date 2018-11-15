@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   before_action :check_admin
+  authorize_resource :class => false
 
   def index
     @list_categories = Category.list_all_categories?

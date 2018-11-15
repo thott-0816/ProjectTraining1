@@ -49,7 +49,7 @@ class Course < ApplicationRecord
   def should_generate_new_friendly_id?
     name_changed? || super
   end
-  
+
   def update_rating
     update_column :rate_average, Rating.where(course_id: id).average(:rating).to_f.round(1)
   end
