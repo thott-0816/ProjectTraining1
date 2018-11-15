@@ -1,6 +1,6 @@
 <% @courses.each do |course| %>
   <tr class="odd gradeX">
-    <td><%= link_to course.name, edit_admin_course_path(course) %>
+    <td><%= link_to course.name, admin_course_lessons_path(course) %>
     <td><%= link_to course.user_name, admin_user_path(course.user) %></td>
     <td><%= link_to course.category_name, admin_category_path(course.category) %></td>
     <td><%= course.description %></td>

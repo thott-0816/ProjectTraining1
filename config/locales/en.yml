@@ -6,6 +6,9 @@ en:
   delete_failed: "An error has occurred while deleting!"
   delete_success: "Delete Successful!"
   delete_warning: "Can't delete because exist of product in category"
+  create_success: "Add new successed!"
+  create_failed: "An error occurred while adding new"
+  course_not_found: "No matching course found"
 
   users:
     avatar_size_error: "should be less than 5MB"

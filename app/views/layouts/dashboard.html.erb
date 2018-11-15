@@ -22,5 +22,6 @@
         <%= yield %>
       </div>
     </div>
+    <%= render "layouts/modal" unless current_user.nil? %>
   </body>
 </html>

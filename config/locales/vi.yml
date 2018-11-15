@@ -6,6 +6,9 @@ vi:
   delete_failed: "Đã xảy ra lỗi trong quá trình xóa!"
   delete_success: "Xóa thành công"
   delete_warning: "Không thể xóa danh mục này vì vẫn còn tồn tại khóa học"
+  create_success: "Thêm mới thành công"
+  create_failed: "Đã xảy ra lỗi trong quá trình thêm mới"
+  course_not_found: "Không tìm thấy khóa học phù hợp"
 
   users:
     avatar_size_error: "phải nhỏ hơn 5MB"

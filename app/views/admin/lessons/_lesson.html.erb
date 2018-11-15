@@ -1,0 +1,32 @@
+<table class="table table-hover table-bordered datatable">
+  <thead class="text-center">
+    <tr>
+      <th><%= t "lesson.index.lesson_name" %></th>
+      <th><%= t "lesson.index.video" %></th>
+      <th><%= t "lesson.index.created_at" %></th>
+      <th><%= t "lesson.index.action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lessons.each_with_index do |lesson, i| %>
+      <tr>
+        <td><%= lesson.name %></td>
+        <td>
+          <div class="lesson-item" data-toggle="modal" data-target="#myModal"
+            data-url="<%= lesson.video_url %>" id="lesson-show">
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <%= t ".click_to_play_video" %>
+          </div>
+        </td>
+        <td><%= lesson.created_at.strftime("%m/%d/%Y") %></td>
+        <td>
+          <%= link_to admin_course_lesson_path(@course, lesson),
+            method: :delete, data: {confirm: t("lesson.index.sure")},
+            class: "btn btn-danger btn-rounded" do %>
+              <i class="fa fa-trash"></i> <%= t "lesson.index.delete" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

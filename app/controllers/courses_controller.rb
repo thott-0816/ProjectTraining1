@@ -9,13 +9,14 @@ class CoursesController < ApplicationController
       if @commentrate.save
         @flash = {text: t("course.create.success"), type: "success"}
       else
-        @flash = {text: t("course.create.failed"), type: "danger"}        
+        @flash = {text: t("course.create.failed"), type: "danger"}
       end
       format.js
     end
   end
 
   private
+
   def load_course
     @course = Course.friendly.find_by_slug params[:id]
     @list_ratings_comments = Course.list_ratings_comment? @course.id

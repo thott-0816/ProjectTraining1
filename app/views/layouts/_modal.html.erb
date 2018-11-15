@@ -6,10 +6,8 @@
         <h4 class="modal-title">Play lesson video</h4>
       </div>
       <div class="modal-body">
-        <video width="100%" id="videoo" controls>
-          <source src="" type="video/mp4" id="url_video_modal">
-          Your browser does not support HTML5 video.
-        </video>
+        <%= video_tag("", poster: "default.jpg", controls: true,
+          id: "url_video_modal", class: "set_width_video") %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

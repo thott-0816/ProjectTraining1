@@ -4,7 +4,7 @@
     - <%= msg %><br>\
   <% end %>');
 <% elsif current_user.admin? %>
-  window.location.href = '<%= admin_dashboards_path %>';
+  window.location.href = '<%= admin_path %>';
 <% else %>
   window.location.href = '<%= root_path %>';
 <% end %>

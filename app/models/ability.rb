@@ -11,11 +11,13 @@ class Ability
           end
         end
       else
-        can :read, :all
-        can :update, User, id: user.id
-        can [:update, :destroy], [Comment, Rating], user_id: user.id
-        if user.lecture?
-          can :manage, [Course, Lesson]
+        unless user.admin?
+          can :read, :all
+          can :update, User, id: user.id
+          can [:update, :destroy], [Comment, Rating], user_id: user.id
+          if user.lecture?
+            can :manage, [Course, Lesson]
+          end
         end
     end
   end
