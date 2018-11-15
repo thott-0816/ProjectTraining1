@@ -67,6 +67,9 @@ en:
         tables: " Tables"
         user_profile: "User Profile"
         index: "Index"
+    header:
+      home: "Home"
+      logout: "Logout"
   admin:
     categories:
       category:
