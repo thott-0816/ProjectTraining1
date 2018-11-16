@@ -15,7 +15,64 @@ $(document).ready(function() {
     $target = $('#'+$input.attr('data-toggle'));
     $target.slideToggle();
   });
+
+  $('body').on('click', '.btn-edit-cmt', function() {
+    $('.edit-cmt').addClass('hidden');
+    $('.message-save-cmt').addClass('hidden');
+    $('.show-cmt').removeClass('hidden');
+    $('.btn-edit-cmt').removeClass('hidden');
+
+    var oldCmt, newCmt, showCmt, editCmt, btnCmt, messageSave;
+    showCmt = $(this).prev('.show-cmt');
+    editCmt = $(this).next('.edit-cmt');
+    btnCmt = $(this);
+    messageSave = editCmt.next('.message-save-cmt');
+    oldCmt = showCmt.text();
+
+    editCmt.val(oldCmt);
+    btnCmt.addClass('hidden');
+    showCmt.addClass('hidden');
+    editCmt.removeClass('hidden');
+    messageSave.removeClass('hidden');
+
+    editCmt.keydown(function(event) {
+      var keycode = event.keyCode ? event.keyCode : event.which;
+      newCmt = $(this).val();
+
+      if(keycode == '27') {
+        hide_show_edit_cmt(btnCmt, editCmt, messageSave, showCmt);
+      }
+      
+      if(keycode == '13' && !event.shiftKey) {
+        if(newCmt == '') {
+          alert('Erorr, your comment can not be empty');
+          hide_show_edit_cmt(btnCmt, editCmt, messageSave, showCmt);
+        } else if(oldCmt == newCmt) {
+          hide_show_edit_cmt(btnCmt, editCmt, messageSave, showCmt);
+        } else {
+          $.ajax({
+            url: btnCmt.attr('data-url'),
+            type: 'PUT',
+            data: {content: newCmt},
+            dataType: 'json'
+          }).done(function() {
+            showCmt.text(newCmt);
+          }).fail(function() {
+            alert('Erorr, please try again!');
+          });
+          hide_show_edit_cmt(btnCmt, editCmt, messageSave, showCmt);
+        }
+      }
+    });
+  });
 });
+
+function hide_show_edit_cmt(btnCmt, editCmt, messageSave, showCmt) {
+  btnCmt.removeClass('hidden');
+  showCmt.removeClass('hidden');
+  messageSave.addClass('hidden');
+  editCmt.addClass('hidden');
+}
 
 function play_close_video(status, url=""){
   if(!status){

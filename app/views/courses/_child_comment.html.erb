@@ -6,7 +6,14 @@
     <div class="comment-heading">
       <h4 class="user"><%= child_comment.user_name %></h4>
       <h5 class="time"><%= time_ago_in_words(child_comment.created_at) %></h5>
+    </div><br>
+    <div class="row">
+      <p class="col-sm-11 show-cmt"><%= child_comment.content %></p>
+      <% if can? :update, child_comment.user %>
+        <span class="fa fa-pencil col-sm-1 btn-edit-cmt" data-url="<%= comment_path(child_comment) %>"></span>
+        <input class="form-control col-sm-12 edit-cmt hidden" value="<%= child_comment.content %>">
+        <small class="col-sm-12 message-save-cmt hidden"><%= raw t "course.comment.message_save_cmt" %></small>
+      <% end %>
     </div>
-    <p><%= child_comment.content %></p>
   </div>
 </li>
