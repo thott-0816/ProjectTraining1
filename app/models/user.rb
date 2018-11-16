@@ -18,6 +18,10 @@ class User < ApplicationRecord
 
   scope :can_post_course, -> { where(role: roles.except(:student).values).collect{|user| [user.name, user.id]} }
 
+  scope :search_users, (lambda do |text_search|
+    where("MATCH (name) AGAINST ('#{text_search}')")
+  end)
+
   def check_rating? course_id
     ratings.where(course_id: course_id).present?
   end

@@ -18,6 +18,10 @@ class Course < ApplicationRecord
   scope :list_all?, -> { order(created_at: :desc).select :id, :name, :description,
     :rate_average, :thumbnail, :user_id, :category_id, :created_at, :slug }
 
+  scope :search_courses, (lambda do |text_search|
+    where("MATCH (description, name) AGAINST ('#{text_search}')")
+  end)
+
   scope :list_ratings_comment?, (lambda do |course_slug|
     eager_load(:ratings, :comments).friendly.find_by_slug course_slug
   end)

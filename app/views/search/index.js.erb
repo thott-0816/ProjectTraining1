@@ -1,0 +1,12 @@
+$('#key-search').html('<%= params[:search] %>');
+$('.list-course').html('');
+$('.list-user').html('');
+$('.page-course').html('');
+$('.page-user').html('');
+$('.list-course').html("<%= j render 'item_search' %>");
+$('.list-user').html("<%= j render 'user_search' %>");
+$('.page-course').html('<%= j render "paginate_search", page: @list_course_search  %>');
+$('.page-user').html('<%= j render "paginate_search", page: @list_user_search  %>');
+if($('#key-search').text() != ""){
+    search($('#key-search').text());
+}

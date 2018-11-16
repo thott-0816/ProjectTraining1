@@ -7,7 +7,7 @@ User.create!(
 )
 
 User.create!(
-  name: "hihi",
+  name: "pham van tong",
   email: "user@gmail.com",
   password: "123456",
   role: "student",
@@ -20,7 +20,7 @@ Category.create!(
   description: Faker::Food.description
 )
 
-15.times do |i|
+30.times do |i|
   rate = Faker::Number.decimal(1, 1).to_f
   if rate > 5
     rate -= 5
