@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
 
   def show; end
 
-  def create
+  def newcomment
     @commentrate = CommentRate.new commentrate_params, current_user
     respond_to do |format|
       if @commentrate.save

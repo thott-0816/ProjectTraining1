@@ -1,4 +1,4 @@
-<%= form_for @commentrate, url: courses_path, method: :POST, remote: true do |f| %>
+<%= form_for @commentrate, url: newcomment_path, method: :POST, remote: true do |f| %>
   <%= f.hidden_field :course_id, value: comment.nil? ? @course.id : comment.course_id %>
   <%= f.hidden_field :parent_id, value: comment.nil? ? nil : comment.id %>
   <% unless comment %>
