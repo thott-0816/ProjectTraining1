@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "home#index"
     resources :courses
+    post "/newcomment", to: "courses#newcomment", as: "newcomment"
     devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions",
     passwords: "users/passwords"}, skip: :omniauth_callbacks
 
