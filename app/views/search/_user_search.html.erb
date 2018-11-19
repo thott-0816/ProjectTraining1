@@ -1,0 +1,21 @@
+<% if @list_user_search.present? %>
+  <% @list_user_search.each do |user| %>
+    <ul class="list-group" id="contact-list">
+      <li class="list-group-item">
+        <div class="col-xs-12 col-sm-2">
+          <%= image_tag user.avatar.url, class: "img-responsive img-circle" %>
+        </div>
+        <div class="col-xs-12 col-sm-10">
+          <h4 class="user-name"><%= "#{t "search.name"} : #{user.name}" %></h4>
+          <p><%= ("#{t "search.courses"} : <strong>#{user.courses.size}</strong>").html_safe %></p>
+          <p><%= ("#{t "search.ratings"} : <strong>#{user.ratings.size}</strong>").html_safe %></p>
+          <p><%= ("#{t "search.average_rating"} : <strong>#{user.courses.average(:rate_average).to_f.round(2)}</strong>").html_safe %></p>
+          <p><i class="fa fa-envelope"></i> <i class="fa fa-phone"></i></p>
+        </div>
+        <div class="clearfix"></div>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <h3 class="text-center"><%= t "search.not_found" %></h3>
+<% end %>

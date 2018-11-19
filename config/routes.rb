@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     root "home#index"
     resources :courses
     post "/newcomment", to: "courses#newcomment", as: "newcomment"
+    resources :search, only: :index
     devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions",
     passwords: "users/passwords"}, skip: :omniauth_callbacks
 

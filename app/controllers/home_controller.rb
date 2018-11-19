@@ -5,6 +5,8 @@ class HomeController < ApplicationController
     @list_categories = Category.list_all_categories?
   end
 
+  def show; end
+
   private
 
   def check_admin

@@ -1,0 +1,20 @@
+.item-search{
+  cursor: pointer;
+}
+.item-search.list-group-item {
+  height:auto;
+  min-height:220px;
+}
+.item-search.list-group-item.active small {
+  color:#fff;
+}
+
+.well mark { 
+  background-color: orange;
+  color: black;
+}
+
+.page-center {
+  display: flex;
+  justify-content: center;
+}

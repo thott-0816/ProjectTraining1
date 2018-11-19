@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_13_013657) do
+ActiveRecord::Schema.define(version: 2018_11_16_013802) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_013657) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.index ["category_id"], name: "index_courses_on_category_id"
+    t.index ["description", "name"], name: "courses_description_name_full_text_search", type: :fulltext
     t.index ["slug"], name: "index_courses_on_slug"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_013657) do
     t.integer "role", default: 0
     t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "users_name_full_text_search", type: :fulltext
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

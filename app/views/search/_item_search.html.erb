@@ -1,0 +1,24 @@
+<% if @list_course_search.present? %>
+  <% @list_course_search.each do |course| %>
+    <div class="list-group-item item-search">
+      <div class="media col-md-3">
+        <figure class="pull-left">
+          <%= image_tag course.thumbnail.url, class: "media-object img-rounded img-responsive" %>
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <h4 class="list-group-item-heading course-name"><%= course.name %></h4>
+        <p class="list-group-item-text course-description"><%= course.description %></p>
+      </div>
+      <div class="col-md-3 text-center">
+        <h2><%= course.ratings.size %> votes</h2>
+        <%= link_to t("button.view_now"), course_path(course), class: "btn btn-primary btn-lg btn-block btn-detail", target: "_blank" %>
+        <hr>
+        <%= rate(course.rate_average).html_safe %>
+        <p><%= course.rate_average %> / 5</p>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <h3 class="text-center"><%= t "search.not_found" %></h3>
+<% end %>
