@@ -13,8 +13,15 @@
         
       </div>
     </div>
-    <div class="post-description"> 
-      <p><%= comment.content %></p>
+    <div class="post-description">
+      <div class="row">
+        <p class="col-sm-11 show-cmt"><%= comment.content %></p>
+        <% if can? :update, comment.user %>
+          <span class="fa fa-pencil col-sm-1 btn-edit-cmt" data-url="<%= comment_path(comment) %>"></span>
+          <input class="form-control col-sm-12 edit-cmt hidden" value="<%= comment.content %>">
+          <small class="col-sm-12 message-save-cmt hidden"><%= raw t "course.comment.message_save_cmt" %></small>
+        <% end %>
+      </div>
       <div class="stats">
       <h3>
         <span class="label label-success">

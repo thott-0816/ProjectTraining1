@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :courses do
       resources :lessons
     end
+    resources :comments, only: :update
     devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions",
     passwords: "users/passwords"}, skip: :omniauth_callbacks
     resources :users, only: :show
