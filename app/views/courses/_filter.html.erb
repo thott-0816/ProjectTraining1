@@ -1,0 +1,56 @@
+<%= form_tag "", id: "form-submit", method: :get do %>
+  <div class="col-md-12">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row form-group">
+          <div class="col-lg-3 col-sm-3 ">
+            <%= label_tag :name, t("course.index.name") %>
+          </div>
+          <div class="col-lg-9 col-sm-9 col-xs-9">
+            <%= text_field_tag :name, params[:name],
+              class: "form-control search-box", placeholder: t("course.index.name") %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row form-group">
+          <div class="col-lg-3 col-sm-3">
+            <%= label_tag :category_id, t("course.index.category") %>
+          </div>
+          <div class="col-lg-9 col-sm-9 col-xs-9">
+            <div class="form-group">
+              <%= select_tag :category_id, options_for_select(options, params[:category_id]),
+                selected: 1, include_blank: t(".none"), class: "form-control" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row form-group">
+          <div class="col-lg-3 col-sm-3 ">
+            <%= label_tag :description, t("course.index.description") %>
+          </div>
+          <div class="col-lg-9 col-sm-9 col-xs-9">
+            <%= text_field_tag :description, params[:description],
+              class: "form-control search-box", placeholder: t("course.index.description") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 col-sm-12">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="form-group">
+          <span class="input-group-btn">
+            <button class="btn btn-info btn-md btn-search pull-right col-md-1" data-toggle="tooltip">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

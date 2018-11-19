@@ -8,7 +8,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-lg-12">
-            <%= simple_form_for([:admin, @course], remote: true) do |f| %>
+            <%= simple_form_for(@course, remote: true) do |f| %>
               <%= render "shared/error_messages", object: f.object %>
               <form role="form">
                 <div class="form-group">

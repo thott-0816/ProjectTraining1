@@ -1,1 +1,5 @@
 collection_item: 4
+show_more: 1
+course:
+  item: 6
+  per_page: 5

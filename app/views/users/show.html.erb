@@ -1,0 +1,81 @@
+<div class="row profile">
+  <div class="col-md-2">
+    <div class="profile-sidebar">
+      <div class="profile-userpic">
+        <% if @user.avatar.url.present? %>
+          <%= image_tag @user.avatar.url %>
+        <% else %>
+          <%= image_tag "default_avatar_big" %>
+        <% end %>
+      </div>
+      <div class="profile-usertitle">
+        <div class="profile-usertitle-name">
+          <%= @user.name %>
+        </div>
+        <div class="profile-usertitle-job">
+          <%= @user.role %>
+        </div>
+      </div>
+      <% unless @user == current_user %>
+        <div class="profile-userbuttons">
+          <button type="button" class="btn btn-success btn-sm"><%= t ".follow" %></button>
+          <button type="button" class="btn btn-danger btn-sm"><%= t ".message" %></button>
+        </div>
+      <% end %>
+      <div class="profile-usermenu">
+        <ul class="nav">
+          <% unless @user.role == "student" %>
+            <li>
+              <a href="#">
+              <i class="glyphicon glyphicon-user"></i>
+              <%= t ".total_student" %> <span class="user-info"></span></a>
+            </li>
+            <li>
+              <a href="#">
+              <i class="glyphicon glyphicon-book"></i>
+              <%= t ".course" %> <span class="user-info"><%= @user.courses.size %></span></a>
+            </li>
+            <li>
+              <a href="#">
+              <i class="glyphicon glyphicon-comment"></i>
+              <%= t ".review" %> <span class="user-info"><%= @count_review if @user.courses %></span></a>
+            </li>
+          <% end %>
+          <% if @user == current_user %>
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="glyphicon glyphicon-cog"></i><%= t ".acount_settings" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <div class="profile-content">
+      <% if @user == current_user %>
+        <%= t ".write_something" %>
+      <% end %>
+    </div>
+  </div>
+  <section class="blog-area section-padding-100-0">
+    <div class="container">
+      <div class="row"></div>
+      <% unless @user.role == "student" %>
+        <div class="row">
+          <h3><%= t ".taught_by" %> <%= @user.name %></h3>
+          <div class="featured-item">
+            <%= render partial: "shared/course", collection: @courses %>
+          </div>
+          <div class="text-center">
+            <% if @courses.size > Settings.course.per_page %>
+              <%= link_to t(".load_more"), user_path(page: @courses.current_page + Settings.show_more),
+                id: "load-more-course", remote: true, class: "btn btn-default" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</div>
