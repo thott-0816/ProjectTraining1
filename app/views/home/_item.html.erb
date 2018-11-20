@@ -1,6 +1,6 @@
 <span class="thumbnail">
   <%= link_to image_tag(course.thumbnail.url), course_path(course), data: {turbolinks: false} %>
-  <h4><%= course.name %></h4>
+  <h4><%= link_to course.name, course_path(course) %></h4>
   <div class="rating">
     <%= rate(course.rate_average).html_safe %>
   </div>

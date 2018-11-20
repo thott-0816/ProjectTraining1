@@ -14,13 +14,15 @@ User.create!(
   avatar: File.open(File.join(Rails.root, "app/assets/images/doremon.jpg"))
 )
 
-Category.create!(
-  name: Faker::Name.name,
-  parent_id: nil,
-  description: Faker::Food.description
-)
+10.times do |i|
+  Category.create!(
+    name: Faker::Name.name + i.to_s,
+    parent_id: nil,
+    description: Faker::Food.description + i.to_s
+  )
+end
 
-30.times do |i|
+60.times do |i|
   rate = Faker::Number.decimal(1, 1).to_f
   if rate > 5
     rate -= 5
@@ -31,7 +33,7 @@ Category.create!(
     rate_average: rate,
     thumbnail: File.open(File.join(Rails.root, "app/assets/images/default.jpg")),
     user_id: 1,
-    category_id: 1
+    category_id: Category.order("RAND()").first.id
 )
 end
 
@@ -40,7 +42,7 @@ end
   Rating.create!(
     rating: rate,
     user_id: 1,
-    course_id: 1
+    course_id: Course.order("RAND()").first.id
 )
 end
 
@@ -48,15 +50,15 @@ end
   Comment.create!(
     content: Faker::Cat.registry,
     user_id: 1,
-    course_id: 1,
+    course_id: Course.order("RAND()").first.id,
     parent_id: i/3 == 0 ? nil : (i/3)*3
   )
 end
 
 5.times do |i|
   Lesson.create!(
-    name: Faker::LeagueOfLegends.champion,
+    name: Faker::LeagueOfLegends.champion + i.to_s,
     video_url: File.open(File.join(Rails.root, "app/assets/images/video.mp4")),
-    course_id: 1
+    course_id: Course.order("RAND()").first.id
   )
 end
