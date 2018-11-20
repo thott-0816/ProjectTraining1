@@ -44,16 +44,17 @@ body {
 }
 
 .line-clamp {
-  -webkit-box-orient: vertical;  
-  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   display: -webkit-box;
   margin: 0 0 1em 0;
   overflow: hidden;
   width: 230px;
+  min-height: 52px;
 }
 
 .thumbnail{
-  -webkit-transition: all 0.5s; 
+  -webkit-transition: all 0.5s;
   opacity:0.70;
   transition: all 0.5s;
 }

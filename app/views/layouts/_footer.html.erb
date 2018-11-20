@@ -1,10 +1,28 @@
-<footer class="footer bg-dark text-white">
-  <section class="action-sec">
-    <div class="container">
-      <div class="action-box text-center">
-        <h2>LOL</h2>
-        <i class="btn btn-success">ahihi</i>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4 class="title">Jhon Wick</h4>
+        <p>Là team trực thuộc Div/Sec2/G1 công ty Framgia chuyên về Ruby on Rails, được chống lưng bởi ông trùm Dương Lê Bắc.</p>
+        <ul class="social-icon">
+        <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+        <a href="#" class="social"><i class="fa fa-github" aria-hidden="true"></i></a>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <h4 class="title"><%= t "layouts.admin.admin_header.category" %></h4>
+        <div class="category">
+          <% @categories.each do |category| %>
+            <%= link_to category.name, category %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </section>
+    <hr>
+    <div class="row text-center">Copyright &copy; 2018. Designed by <a href="#">Jhon Wick</a>. All rights reseved</div>
+  </div>
 </footer>

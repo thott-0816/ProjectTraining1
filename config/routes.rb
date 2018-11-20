@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     root "home#index"
     post "/newcomment", to: "courses#newcomment", as: "newcomment"
     resources :search, only: :index
+    resources :categories, only: :show
     resources :courses do
       resources :lessons
     end

@@ -10,14 +10,16 @@
   </head>
 
   <body>
-    <%= render "layouts/header" unless current_user.nil? %>
-    <div class="main">
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "time-out alert alert-#{message_type}") %>
-      <% end %>
-      <%= yield %>
+    <div class="resize">
+      <%= render "layouts/header" unless current_user.nil? %>
+      <div class="main pt-30 pb-350">
+        <% flash.each do |message_type, message| %>
+          <%= content_tag(:div, message, class: "time-out alert alert-#{message_type}") %>
+        <% end %>
+        <%= yield %>
+      </div>
+      <%= render "layouts/footer" unless current_user.nil? %>
+      <%= render "layouts/modal" unless current_user.nil? %>
     </div>
-    <%= render "layouts/footer" unless current_user.nil? %>
-    <%= render "layouts/modal" unless current_user.nil? %>
   </body>
 </html>

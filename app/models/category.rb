@@ -15,6 +15,7 @@ class Category < ApplicationRecord
   scope :list_all_categories?, -> { eager_load(:courses) }
   scope :roots, -> parent_id{where(parent_id: parent_id)}
   scope :get_all_category, -> {select(:id, :name, :parent_id, :description, :slug)}
+  scope :root_category, -> {select(:id, :name, :slug).where(parent_id: nil)}
 
   def descendents
     children || self.children.map(&:descendents).flatten

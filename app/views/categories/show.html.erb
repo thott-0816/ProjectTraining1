@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row mb-30">
+    <h2 class="title"><%= pluralize(@count_course, t("layouts.admin.admin_header.course")) %></h2>
+    <hr/>
+    <div class="featured-item">
+      <%= render partial: "shared/course", collection: @courses %>
+    </div>
+    <div class="text-center">
+      <% if @courses.size > Settings.course.per_page %>
+        <%= link_to t("users.show.load_more"), category_path(page: @courses.current_page + Settings.show_more),
+          id: "load-more-course", remote: true, class: "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>
