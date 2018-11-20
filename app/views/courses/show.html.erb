@@ -32,7 +32,7 @@
           <%= render "author" %>
         </div>
         <div class="control-box main-content" id="votes">
-          <%= render partial: "rating", object: @list_ratings_comments.ratings, as: "ratings" %>
+          <%= render partial: "rating", object: @ratings, as: "ratings" %>
         </div>
         <% unless current_user.check_rating? @course.id %>
           <div class="control-box main-content" id="write-comment">
@@ -40,9 +40,12 @@
           </div>
         <% end %>
         <div id="comments">
-          <% @list_ratings_comments.comments.parent_comment?.each do |comment| %>
+          <% @comments.parent_comment?.each do |comment| %>
             <%= render partial: "comment", object: comment, as: "comment" %>
           <% end %>
+        </div>
+        <div class="page-course page-center">
+          <%= paginate @comments, theme: "twitter-bootstrap-3" %>
         </div>
 
       </div>
