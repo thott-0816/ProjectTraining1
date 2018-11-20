@@ -1,7 +1,7 @@
 class Admin::LessonsController < Admin::ApplicationController
   load_and_authorize_resource find_by: :slug
 
-  before_action :get_course, only: %i(index create destroy)
+  before_action :get_course, only: %i(index new create destroy)
   before_action :get_lesson, only: :destroy
 
   def index

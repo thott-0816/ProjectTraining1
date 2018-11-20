@@ -3,7 +3,7 @@ User.create!(
   email: "admin@gmail.com",
   password: "123456",
   role: "admin",
-  avatar: File.open(File.join(Rails.root, "app/assets/images/default_avatar_big.png"))
+  avatar: nil
 )
 
 User.create!(
@@ -11,7 +11,7 @@ User.create!(
   email: "user@gmail.com",
   password: "123456",
   role: "student",
-  avatar: File.open(File.join(Rails.root, "app/assets/images/doremon.jpg"))
+  avatar: nil
 )
 
 Category.create!(
@@ -29,7 +29,7 @@ Category.create!(
     name: Faker::Name.name,
     description: Faker::Food.description,
     rate_average: rate,
-    thumbnail: File.open(File.join(Rails.root, "app/assets/images/default.jpg")),
+    thumbnail: nil,
     user_id: 1,
     category_id: 1
 )

@@ -1,15 +1,23 @@
 class AvatarUploader < CarrierWave::Uploader::Base
-  include CarrierWave::MiniMagick
-
-  process resize_to_limit: [500, 500]
-
-  storage :file
-  
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  include Cloudinary::CarrierWave
 
   def extension_whitelist
     %w(jpg jpeg gif png)
   end
-end
+
+  version :big do
+    process resize_to_fill: [500, 500]
+  end
+
+  version :standard do
+    process resize_to_fill: [350, 250]
+  end
+
+  version :thumb do
+    process resize_to_fill: [150, 150]
+  end
+
+  def default_public_id
+    "doremon"
+  end
+end 

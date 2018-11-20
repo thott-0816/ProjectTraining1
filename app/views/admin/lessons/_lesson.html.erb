@@ -13,7 +13,7 @@
         <td><%= lesson.name %></td>
         <td>
           <div class="lesson-item" data-toggle="modal" data-target="#myModal"
-            data-url="<%= lesson.video_url %>" id="lesson-show">
+            data-url="<%= lesson.video_url.url %>" id="lesson-show">
             <span class="glyphicon glyphicon-play-circle"></span>
             <%= t ".click_to_play_video" %>
           </div>
