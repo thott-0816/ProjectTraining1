@@ -24,7 +24,9 @@ en:
       success: "Successful!"
       failed: "False"
     show:
+      ago: "ago"
       create_comment: "create a comment"
+      created: "Posted at"
       holder_text: "Input to comment"
     edit:
       edit_course: "Edit course"

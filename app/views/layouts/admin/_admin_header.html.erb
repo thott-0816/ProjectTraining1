@@ -1,20 +1,22 @@
 <div id="wrapper">
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-      </button>
       <%= link_to admin_url, class: "navbar-brand" do %>
         <i class="fa fa-home"></i>
         <%= t ".home" %>
       <% end %>
-
     </div>
     <ul class="nav navbar-right navbar-top-links">
-      <li class="dropdown">
+      <li id="admin-header-1" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <i class="fa fa-globe"></i> <%= I18n.locale %> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+          <li><%= link_to t("layouts.header.english"), locale:"en" %></li>
+          <li><%= link_to t("layouts.header.vietnam"), locale:"vi" %></li>
+        </ul>
+      </li>
+      <li id="admin-header-2" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
           <% if current_user.avatar.url.present? %>
             <%= image_tag current_user.avatar.url, class: "circular-avatar" %>

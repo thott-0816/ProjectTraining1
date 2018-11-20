@@ -13,7 +13,7 @@
   <body>
     <%= render "layouts/admin/admin_header" %>
     <div id="page-wrapper">
-      <div class="container-fluid">
+      <div class="container-fluid mt-40">
         <% flash.each do |message_type, message| %>
           <div class="time-out alert alert-<%= message_type %>">
             <%= message %>

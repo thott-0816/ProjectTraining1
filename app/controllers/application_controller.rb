@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   before_action :set_locale
+  before_action :load_all_categories
 
   class << self
     def default_url_options
@@ -19,6 +20,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def load_all_categories
+    @categories = Category.root_category
+  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

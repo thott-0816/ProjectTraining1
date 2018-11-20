@@ -1,0 +1,7 @@
+$('.featured-item').append('<%= j render(partial: "shared/course", collection: @courses) %>');
+
+<% if @courses.last_page? %>
+  $('#load-more-course').hide();
+<% else %>
+  $('#load-more-course').attr('href', '<%= category_path(page: @courses.current_page + Settings.show_more) %>');
+<% end %>

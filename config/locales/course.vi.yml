@@ -24,7 +24,9 @@ vi:
       success: "Thành công!"
       failed: "Thất bại"
     show:
+      ago: "trước"
       create_comment: "Đã bình luận"
+      created: "Đăng"
       holder_text: "Nhập vào bình luận"
     edit:
       edit_course: "Chỉnh sửa khóa học"
