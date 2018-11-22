@@ -8,7 +8,7 @@ gem "bootstrap-kaminari-views"
 gem "bootstrap-sass", "~> 3.3.7"
 gem "cancancan", "~> 2.0"
 gem "carrierwave"
-gem "cloudinary"
+gem "cloudinary", "~> 1.9.1"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "devise"
@@ -30,6 +30,7 @@ gem "rails-i18n"
 gem "ransack"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
+gem "uglifier"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
