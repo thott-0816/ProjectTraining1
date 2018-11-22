@@ -19,7 +19,8 @@ class Admin::UsersController < Admin::ApplicationController
   def edit; end
 
   def update
-    flash[:success] = t ".update_success" if @user.update user_params
+    result = @user.admin? ? @user.update(user_params.except :role) : @user.update(user_params)
+    flash[:success] = t ".update_success" if result
   end
 
   def destroy
