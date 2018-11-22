@@ -38,7 +38,7 @@
           <%= render "child_comment", child_comment: child_comment %>
         <% end %>
       </ul>
-      <%= render "write_comment", comment: comment %>
+      <%= render "write_comment", comment: comment if user_signed_in? %>
     </div>
   </div>
 </div>

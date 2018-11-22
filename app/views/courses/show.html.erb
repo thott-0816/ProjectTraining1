@@ -34,10 +34,12 @@
         <div class="control-box main-content" id="votes">
           <%= render partial: "rating", object: @ratings, as: "ratings" %>
         </div>
-        <% unless current_user.check_rating? @course.id %>
-          <div class="control-box main-content" id="write-comment">
-            <%= render "write_comment", comment: nil %>
-          </div>
+        <% if user_signed_in? %>
+          <% unless current_user.check_rating? @course.id  %>
+            <div class="control-box main-content" id="write-comment">
+              <%= render "write_comment", comment: nil %>
+            </div>
+          <% end %>
         <% end %>
         <div id="comments">
           <% @comments.parent_comment?.each do |comment| %>

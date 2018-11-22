@@ -83,6 +83,8 @@ vi:
       logout: "Đăng xuất"
       my_course: "Khóa học của tôi"
       setting: "Tùy chỉnh"
+      signin: "Đăng nhập"
+      signup: "Đăng ký"
       vietnam: "Việt Nam"
   admin:
     categories:

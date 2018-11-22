@@ -2,6 +2,7 @@ class CoursesController < ApplicationController
   load_and_authorize_resource find_by: :slug
   before_action :load_course, only: %i(show edit update destroy)
   before_action :load_all_course, only: :index
+  before_action :authenticate_user!, except: :show
 
   def index
     redirect_to root_path if current_user.role == "student"
