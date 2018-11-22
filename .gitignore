@@ -53,7 +53,9 @@ config/credentials.yml.enc
 # Ignore application configuration
 /config/application.yml
 
+config/environments/*.local.yml
+config/secrets.yml
 config/settings.local.yml
 config/settings/*.local.yml
-config/environments/*.local.yml
 public/uploads
+public/apidocs

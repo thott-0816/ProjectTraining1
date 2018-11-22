@@ -3,3 +3,7 @@ show_more: 1
 course:
   item: 6
   per_page: 5
+api:
+  client_name: "client"
+  company: "framgia"
+  time_reset_token: 7
