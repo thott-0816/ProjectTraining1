@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :courses, dependent: :destroy
+  has_many :orders, dependent: :destroy
+  has_one :cart, dependent: :destroy
+  has_one :wallet, dependent: :destroy
 
   validates :name, presence: true
   validates_integrity_of :avatar

@@ -83,6 +83,8 @@ en:
       logout: "Logout"
       my_course: "My Course"
       setting: "Settings"
+      signin: "Sign in"
+      signup: "Sign up"
       vietnam: "Vietnamese"
   admin:
     categories:

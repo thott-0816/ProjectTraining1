@@ -4,6 +4,7 @@ class LessonsController < ApplicationController
   before_action :check_user
   before_action :get_course, only: %i(index create destroy)
   before_action :get_lesson, only: :destroy
+  before_action :authenticate_user!
 
   def index
     @lessons = @course.lessons

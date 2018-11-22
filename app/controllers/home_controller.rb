@@ -11,6 +11,6 @@ class HomeController < ApplicationController
   private
 
   def check_admin
-    redirect_to admin_path if current_user.role == "admin"
+    redirect_to admin_path if user_signed_in? && current_user.role == "admin"
   end
 end
