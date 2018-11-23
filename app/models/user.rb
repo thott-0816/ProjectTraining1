@@ -40,8 +40,24 @@ class User < ApplicationRecord
     end
   end
 
+  def load_attribute_user
+    authorize_token = JsonWebToken.encode user_id: id
+
+    {
+      name: name,
+      email: email,
+      provider: provider,
+      avatar: avatar,
+      role: role,
+      uid: uid,
+      created_at: created_at,
+      updated_at: updated_at,
+      token: authorize_token
+    }
+  end
+
   private
-   def avatar_size
+  def avatar_size
     if avatar.size > 5.megabytes
       errors.add :avatar, I18n.t("users.avatar_size_error")
     end
