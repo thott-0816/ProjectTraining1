@@ -6,6 +6,8 @@ class Course < ApplicationRecord
   has_many :lessons, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :cart_items, dependent: :destroy
+  has_many :order_details, dependent: :destroy
 
   belongs_to :category
   belongs_to :user

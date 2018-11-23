@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2018_11_22_081801) do
 
-  create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "cart_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_carts_on_course_id"
-    t.index ["user_id"], name: "index_carts_on_user_id"
+    t.index ["course_id"], name: "index_cart_items_on_course_id"
+    t.index ["user_id"], name: "index_cart_items_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

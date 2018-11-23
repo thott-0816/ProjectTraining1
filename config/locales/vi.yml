@@ -156,6 +156,8 @@ vi:
     edit: "Sửa"
     search: "Tìm kiếm"
     view_now: "Xem ngay!"
+    purchase: "Thanh toán ngay"
+    continue_view: "Xem khóa khác"
   search:
     average_rating: "Bình chọn trung bình"
     contact: "Liên lạc qua"

@@ -1,0 +1,36 @@
+@import 'colors';
+
+.btn-cart-detail {
+  color: $white !important;
+}
+
+.cart-index {
+  background-color: $white !important;
+}
+.cart-items:hover {
+  border-left: 5px solid $green;
+}
+
+.cart-notice {
+  background: $red;
+  border-radius: 50%;
+  color: $black;
+  font-size: 80%;
+  font-weight: bold;
+  min-width: 20px;
+  padding: 2px;
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  text-align: center;
+}
+
+.img-items-cart {
+  width: 80px !important;
+  height: 60px !important;
+}
+
+.many-items {
+  max-height: 110px;
+  overflow: auto;
+}

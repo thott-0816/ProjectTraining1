@@ -1,0 +1,7 @@
+vi:
+  cart_items:
+    btn_show_cart: "Xem giỏ hàng"
+    total_price: "Tổng giá:"
+    index:
+      course: "Khóa học"
+      price: "Giá"
