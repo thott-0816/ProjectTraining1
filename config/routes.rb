@@ -22,7 +22,12 @@ Rails.application.routes.draw do
     resources :orders, only: %i(index create)
     devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions",
     passwords: "users/passwords"}, skip: :omniauth_callbacks
-    resources :users, only: :show
+    resources :users, only: :show do
+      member do
+        get :following, :followers
+      end
+    end
+    resources :relationships, only: [:create, :destroy]
 
     namespace :admin do
       resources :users

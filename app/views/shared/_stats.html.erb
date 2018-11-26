@@ -1,0 +1,55 @@
+<div class="profile-usermenu">
+  <ul class="nav">
+    <li>
+      <%= link_to following_user_path(@user) do %>
+        <i class="fa fa-user-plus"></i>
+        <%= t "users.show.following" %>
+        <span id="following" class="user-info"><%= @user.following.count %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to followers_user_path(@user) do %>
+        <i class="fa fa-user-secret"></i>
+        <%= t "users.show.followers" %>
+        <span id="followers" class="user-info"><%= @user.followers.count %></span>
+      <% end %>
+    </li>
+    <% unless @user.role == "student" %>
+      <li>
+        <%= link_to "#" do %>
+          <i class="fa fa-users"></i>
+          <%= t "users.show.total_student" %>
+          <span class="user-info"><%= @total_student %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to courses_path do %>
+          <i class="glyphicon glyphicon-book"></i>
+          <%= t "users.show.course" %>
+          <span class="user-info"><%= @user.courses.size %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#" do %>
+          <i class="glyphicon glyphicon-comment"></i>
+          <%= t "users.show.review" %>
+          <span class="user-info"><%= @count_review if @user.courses %></span>
+        <% end %>
+      </li>
+    <% end %>
+    <% if @user == current_user %>
+      <li>
+        <%= link_to edit_user_registration_path do %>
+          <i class="glyphicon glyphicon-cog"></i><%= t "users.show.acount_settings" %>
+        <% end %>
+      </li>
+    <% end %>
+    <% if @user == current_user && !current_user.admin? %>
+      <li>
+        <%= link_to orders_path do %>
+          <i class="fa fa-history"></i><%= t "users.show.shopping_history" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

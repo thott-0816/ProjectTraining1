@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :get_user, only: :show
 
   def show
-    @count_review = @user.courses.map(&:comments).flatten.size
+    @total_student = @user.courses.map(&:order_details).flatten.count
+    @count_review = @user.courses.map(&:ratings).flatten.size
     @courses = @user.courses.page(params[:page]).per(Settings.course.item)
     respond_to do |format|
       format.html
@@ -24,6 +25,18 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+  
+  def following
+    @title = t "users.show_follow.following"
+    @users = @user.following.page params[:page]
+    render :show_follow
+  end
+  
+  def followers
+    @title = t "users.show_follow.followers"
+    @users = @user.followers.page params[:page]
+    render :show_follow
   end
 
   private

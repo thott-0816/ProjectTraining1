@@ -14,14 +14,24 @@ en:
     show:
       acount_settings: "Account settings"
       course: "Courses:"
-      follow: "FOLLOW"
+      follow: "Follow"
+      followers: "Followers:"
+      following: "Following:"
       load_more: "Load more"
-      message: "MESSAGE"
+      message: "Message"
       review: "Reviews:"
       taught_by: "Course taught by"
       total_student: "Total Students:"
+      unfollow: "Unfollow"
       write_something: "Click Account Settings to write something about yourself..."
       shopping_history: "Shopping history"
+    show_follow:
+      following: "Following"
+      followers: "Followers"
+      list_empty: "The list is empty!"
+      search_user: "Search user"
+      search: "Search..."
+      not_found_users: "Not found user"
     avatar_size_error: "should be less than 5MB"
     registrations:
       new:

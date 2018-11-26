@@ -1,0 +1,21 @@
+<% provide :title, @title %>
+<div class="container">
+  <div class="row mt-40">
+    <hr>
+    <div class="row">
+      <div class="well">
+        <% if @users.present? %>
+          <h1 class="text-center"><%= @title %></h1>
+          <div class="list-group list-course">
+            <ul class="users follow">
+              <%= render @users %>
+            </ul>
+            <%= paginate @users %>
+          </div>
+        <% else %>
+          <h1 class="text-center"><%= t ".list_empty" %></h1>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

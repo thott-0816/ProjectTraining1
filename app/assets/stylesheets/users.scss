@@ -277,3 +277,24 @@ body {
   font-size: 20px;
   font-weight: bold;
 }
+
+.profile-follow {
+  display: inline-block;
+  line-height: 55px;
+}
+
+.img-user-size {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.list-group-item.follow-page {
+  height:auto;
+  min-height:80px;
+  margin-bottom: 10px;
+}
+
+.btn-follow {
+  float: right;
+  line-height: 35px;
+}

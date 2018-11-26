@@ -1,6 +1,6 @@
 <span hidden id="key-search"><%= params[:search].strip %></span>
 <div class="container">
-  <div class="row">
+  <div class="row mt-40">
     <%= form_tag search_index_path, method: :GET, remote: true, class: "form-horizontal" do %>
       <div class="col-sm-11">
         <%= text_field_tag :search, "", placeholder: t("search.search"), class: "form-control",required: true %>
