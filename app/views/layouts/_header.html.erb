@@ -43,35 +43,10 @@
         <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
       <% end %>
       <ul class="nav navbar-nav navbar-right mt-5">
-        <li>
-          <%= link_to "#" do %>
-            <i class="fa fa-shopping-cart">
-              <span class="cart-notice">10</span>
-            </i>
-          <% end %>
-          <ul>
-            <div class="many-items">
-              <li class="cart-items"><%= link_to "item1", "#" %></li>
-              <li class="cart-items"><%= link_to "item2", "#" %></li>
-              <li class="cart-items"><%= link_to "item3", "#" %></li>
-              <li class="cart-items"><%= link_to "item4", "#" %></li>
-              <li class="cart-items"><%= link_to "item5", "#" %></li>
-              <li class="cart-items"><%= link_to "item6", "#" %></li>
-              <li class="cart-items"><%= link_to "item7", "#" %></li>
-              <li class="cart-items"><%= link_to "item8", "#" %></li>
-              <li class="cart-items"><%= link_to "item9", "#" %></li>
-            </div>
-            <li>
-              <%= link_to "#" do %>
-                  <span><%= t "cart_items.total_price" %> 100.000</span>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to t("cart_items.btn_show_cart"), cart_items_path, class: "btn btn-success btn-cart-detail" %>
-            </li>
-          </ul>
-        </li>
         <% if user_signed_in? %>
+          <li class="show-cart">
+            <%= render "layouts/show_cart", cart_items: @cart_items, total_price: @total_price %>
+          </li>
           <% if current_user.role == "student"  %>
             <li><%= link_to t(".my_course"), courses_path %></a></li>
           <% end %>

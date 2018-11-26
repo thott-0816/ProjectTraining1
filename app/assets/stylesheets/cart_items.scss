@@ -1,14 +1,15 @@
 @import 'colors';
 
+.btn-added {
+  float: right;
+}
+
 .btn-cart-detail {
   color: $white !important;
 }
 
 .cart-index {
   background-color: $white !important;
-}
-.cart-items:hover {
-  border-left: 5px solid $green;
 }
 
 .cart-notice {
@@ -25,12 +26,22 @@
   text-align: center;
 }
 
+.img-cart-home {
+  width: 30%;
+  height: 30%;
+}
+
 .img-items-cart {
-  width: 80px !important;
-  height: 60px !important;
+  width: 100px !important;
+  height: 80px !important;
+  margin: 0 10px;
 }
 
 .many-items {
-  max-height: 110px;
+  max-height: 200px;
   overflow: auto;
+}
+
+.price-course {
+  text-decoration: line-through;
 }

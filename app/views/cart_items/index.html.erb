@@ -10,45 +10,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="col-sm-8">
-              <a class="thumbnail pull-left" href="#"><img src="http://file.vforum.vn/hinh/2018/03/top-nhung-hinh-anh-hoa-dep-nhat-the-gioi-anh-nen-hoa-1.jpg" class="img-items-cart"></a>
-              <h4><a href="#">Product name</a></h4>
-            </td>
-            <td class="col-sm-2"><strong>200.000</strong></td>
-            <td class="col-sm-2">
-              <button type="button" class="btn btn-danger">
-                <span class="fa fa-trash"></span>
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="col-sm-8">
-              <a class="thumbnail pull-left" href="#"><img src="http://file.vforum.vn/hinh/2018/03/top-nhung-hinh-anh-hoa-dep-nhat-the-gioi-anh-nen-hoa-1.jpg" class="img-items-cart"></a>
-              <h4><a href="#">Product name</a></h4>
-            </td>
-            <td class="col-sm-2"><strong>200.000</strong></td>
-            <td class="col-sm-2">
-              <button type="button" class="btn btn-danger">
-                <span class="fa fa-trash"></span>
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td><h3><%= t "cart_items.total_price" %></h3></td>
-            <td><h3><strong>400.000</strong></h3></td>
-          </tr>
-
+          <%= render "cart_item", cart_items: @cart_items, total_price: @total_price %>
           <tr>
             <td></td>
             <td>
-              <button type="button" class="btn btn-default"><%= t "button.continue_view" %></button>
+              <%= link_to t("button.continue_view"), root_path, class: "btn btn-default" %>
             </td>
             <td>
-              <button type="button" class="btn btn-success"><%= t "button.purchase" %></button>
+              <%= link_to t("button.purchase"), "#", class: "btn btn-success" %>
             </td>
           </tr>
         </tbody>

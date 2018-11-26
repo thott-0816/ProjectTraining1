@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_locale
-  before_action :load_all_categories
+  before_action :load_all_categories, :load_cart
 
   class << self
     def default_url_options
@@ -36,5 +36,12 @@ class ApplicationController < ActionController::Base
 
   def current_ability
     @current_ability ||= Ability.new(current_user, namespace)
+  end
+
+  def load_cart
+    if user_signed_in?
+      @cart_items = current_user.cart_items.includes(:course)
+      @total_price = CartItem.total_price @cart_items
+    end
   end
 end

@@ -16,6 +16,7 @@ class Ability
           can :update, User, id: user.id
           can [:update, :destroy], [Comment, Rating], user_id: user.id
           can :newcomment, Course
+          can :manage, CartItem
           if user.lecture?
             can :manage, [Course, Lesson]
           end

@@ -55,4 +55,8 @@ class Course < ApplicationRecord
   def update_rating
     update_column :rate_average, Rating.where(course_id: id).average(:rating).to_f.round(1)
   end
+
+  def price_sale
+    price * (100 - percent_sale) / 100
+  end
 end

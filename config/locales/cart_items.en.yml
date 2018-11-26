@@ -1,7 +1,13 @@
 en:
   cart_items:
     btn_show_cart: "View cart"
+    btn_added: "Added"
+    confirm_delete: "Are you sure?"
     total_price: "Total price:"
     index:
       course: "Course"
       price: "Price"
+    destroy:
+      delete_success: "Deleted the course!"
+      delete_fail: "Erorr, try again!"
+      not_cart_item: "Not find the course"
