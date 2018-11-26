@@ -1,0 +1,7 @@
+en:
+  cart_items:
+    btn_show_cart: "View cart"
+    total_price: "Total price:"
+    index:
+      course: "Course"
+      price: "Price"
