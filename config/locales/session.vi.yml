@@ -1,0 +1,5 @@
+vi:
+  session:
+    create:
+      failed: "Đăng nhập thất bại"
+      sussces: "Đăng nhập thành công"

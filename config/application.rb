@@ -21,5 +21,11 @@ module EduOnline
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :en
     config.time_zone = Settings.time_zone
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins "*"
+        resource "*", headers: :any, methods: [:get, :post, :options, :delete, :put, :patch]
+      end
+    end
   end
 end

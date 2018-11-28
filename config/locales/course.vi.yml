@@ -10,6 +10,7 @@ vi:
       rate_average: "Đánh giá"
       thumbnail: "Ảnh"
       title: "Danh sách khóa học"
+      olala: "1111111111111111 vn"
     new:
       description: "Mô tả"
       description_ph: "Nhập vào mô tả"
@@ -28,6 +29,8 @@ vi:
       create_comment: "Đã bình luận"
       created: "Đăng"
       holder_text: "Nhập vào bình luận"
+      not_found: "Không tìm thấy khóa học"
+      sussces: "Thành công"
     edit:
       edit_course: "Chỉnh sửa khóa học"
     comment:

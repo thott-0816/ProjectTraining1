@@ -1,0 +1,34 @@
+en:
+  swagger:
+    bad_request: "Request failed"
+    locale: "Language local (en/vi)"
+    not_found: "%{model_name} not found"
+    sussces: "Sussces"
+    sessions:
+      email: "Email"
+      notes: "Login account user and get token"
+      password: "Password"
+      summary: "Login account user"
+      tile: "Login"
+    user:
+      email: "Email"
+      name: "User name"
+      notes: "User create the account"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      summary: "Create account"
+      tile: "User management"
+    course:
+      category: "category Id"
+      notes: "This lists detail the course"
+      summary: "Fetches detail course"
+      title: "Course Management"
+    category:
+      tile: "Category management"
+      index:
+        notes: "This lists all the Categorys"
+        summary: "Fetches all category items"
+      show:
+        category: "category Id"
+        notes: "This lists all the courses"
+        summary: "Fetches all courses items in Categrory"

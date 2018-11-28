@@ -2,24 +2,35 @@ class Api::BaseController < ActionController::API
   require "jsonwebtoken"
   
   before_action :authenticate_request!
+  before_action :set_locale
   helper_method :render_json
 
-  def render_json data = nil, message = "", error = false, status = 200, opts = {}
+  def render_json data = nil, message = "", error = false, status = 200
     options = {
       status: status,
       error: error,
       message: message,
       data: data
     }
-    options[:pagination] = pagination opts[:object] if opts[:object]
 
     render json: options, status: status
   end
 
   private
 
+  def load_all_categories
+    @categories = Category.root_category
+  end
+
+  
+  private
+  
   attr_reader :current_user
 
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+  
   def authenticate_request!
     token = request.headers["Authorization"].split(" ").last rescue nil
 

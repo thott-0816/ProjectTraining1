@@ -11,12 +11,12 @@ Swagger::Docs::Config.register_apis(
     "1.0" =>  {
       api_extension_type: :json,
       api_file_path: "public/apidocs",
-      base_path: "http://localhost:3000",
+      base_path: ENV["base_path"],
       clean_directory: true,
       attributes: {
         info: {
-          "title" => "Application ahihi",
-          "description" => "Rails API documention with Swagger UI.",
+          "title" => "Document api for project training edulearning",
+          "description" => "API for project training edulearning",
           "termsOfServiceUrl" => "",
           "contact" => ""
         }

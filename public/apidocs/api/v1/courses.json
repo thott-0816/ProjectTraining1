@@ -5,38 +5,40 @@
   "resourcePath": "courses",
   "apis": [
     {
-      "path": "/api/courses.json",
+      "path": "/api/courses/{id}.json",
       "operations": [
         {
-          "summary": "Fetches all User items",
-          "notes": "This lists all the active users",
+          "summary": "Fetches detail course",
+          "notes": "This lists detail the course",
           "parameters": [
             {
-              "paramType": "query",
-              "name": "page",
+              "paramType": "path",
+              "name": "id",
               "type": "integer",
-              "description": "Page number",
-              "required": false
+              "description": "category Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "locale",
+              "type": "string",
+              "description": "Language local (en/vi)",
+              "required": true
             }
           ],
           "responseMessages": [
             {
-              "code": 401,
+              "code": 200,
               "responseModel": null,
-              "message": "Unauthorized"
+              "message": "Sussces"
             },
             {
-              "code": 406,
+              "code": 404,
               "responseModel": null,
-              "message": "The request you made is not acceptable"
-            },
-            {
-              "code": 500,
-              "responseModel": null,
-              "message": "Requested Range Not Satisfiable"
+              "message": "Course not found"
             }
           ],
-          "nickname": "Api::V1::Courses#index",
+          "nickname": "Api::V1::Courses#show",
           "method": "get"
         }
       ]
