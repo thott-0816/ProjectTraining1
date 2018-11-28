@@ -69,6 +69,9 @@
             </ul>
           </li>
         <% else %>
+          <li class="show-cart-not-login">
+            <%= render "layouts/show_cart_not_login", array_course: @array_course, total_price: @total_price %>
+          </li>
           <li class="username-header"><%= link_to t(".signin"), new_user_session_path %></li>
           <li class="username-header"><%= link_to t(".signup"), new_user_registration_path %></li>
         <% end %>

@@ -10,7 +10,11 @@
           </tr>
         </thead>
         <tbody>
-          <%= render "cart_item", cart_items: @cart_items, total_price: @total_price %>
+          <% if user_signed_in? %>
+            <%= render "cart_item", cart_items: @cart_items, total_price: @total_price %>
+          <% else %>
+            <%= render "cart_item_not_login", array_course: @array_course, total_price: @total_price %>
+          <% end %>
           <tr>
             <td></td>
             <td>
