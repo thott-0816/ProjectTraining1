@@ -33,7 +33,9 @@ end
     rate_average: rate,
     thumbnail: nil,
     user_id: 1,
-    category_id: Category.order("RAND()").first.id
+    category_id: Category.order("RAND()").first.id,
+    price: 100000,
+    percent_sale: 10
 )
 end
 

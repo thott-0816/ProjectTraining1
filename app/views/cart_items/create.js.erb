@@ -1,0 +1,2 @@
+$('.show-cart').html('<%= j render "layouts/show_cart", cart_items: @cart_items, total_price: @total_price %>');
+$('.btn-add-cart-<%= params[:course_id] %>').html('<button class="btn btn-warning btn-added" disabled><%= t "cart_items.btn_added" %></button>');

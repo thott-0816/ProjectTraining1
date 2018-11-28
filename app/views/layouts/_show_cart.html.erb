@@ -1,0 +1,26 @@
+<%= link_to "#" do %>
+  <i class="fa fa-shopping-cart">
+    <span class="cart-notice"><%= cart_items.count %></span>
+  </i>
+<% end %>
+<ul>
+  <div class="many-items">
+    <% cart_items.each do |ci|%>
+      <li>
+        <%= link_to course_path(ci.course) do %>
+          <%= image_tag ci.course.thumbnail.url, class: "img-cart-home" %>
+          <b><%= number_to_currency ci.course.price_sale, locale: :vi %></b><br>
+          <%= ci.course.name %>
+        <% end %>
+      </li>
+    <% end %>
+  </div>
+  <li>
+    <%= link_to "#" do %>
+      <b><%= t "cart_items.total_price" %> <%= number_to_currency total_price, locale: :vi %></b>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to t("cart_items.btn_show_cart"), cart_items_path, class: "btn btn-success btn-cart-detail" %>
+  </li>
+</ul>

@@ -1,0 +1,28 @@
+<% cart_items.each do |ci| %>
+  <tr>
+    <td class="col-sm-8">
+      <%= link_to course_path(ci.course) do %>
+        <%= image_tag ci.course.thumbnail.url, class: "pull-left img-items-cart" %>
+        <h4><%= ci.course.name %></h4>
+      <% end %>
+      <%= link_to ci.course.user.name, user_path(ci.course.user) %>
+    </td>
+    <td class="col-sm-2">
+      <b><%= number_to_currency ci.course.price_sale, locale: :vi %></b>
+      <% if ci.course.percent_sale > 0 %>
+        <span class="price-course"><%= number_to_currency ci.course.price, locale: :vi %></span>
+      <% end %>
+    </td>
+    <td class="col-sm-2">
+      <%= link_to cart_item_path(ci), method: :delete, data: {confirm: t("cart_items.confirm_delete")} do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+
+<tr>
+  <td></td>
+  <td><h3><%= t "cart_items.total_price" %></h3></td>
+  <td><h3><strong><%= number_to_currency total_price, locale: :vi %></strong></h3></td>
+</tr>

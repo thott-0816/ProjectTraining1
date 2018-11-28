@@ -55,12 +55,10 @@ body {
 
 .thumbnail{
   -webkit-transition: all 0.5s;
-  opacity:0.70;
   transition: all 0.5s;
 }
 .thumbnail:hover{
   box-shadow: 0px 0px 10px $blue-moke;
-  opacity:1.00;
 }
 .thumbnail h4{
   font-weight: 600;
@@ -72,8 +70,9 @@ body {
 }
 
 .thumbnail .price{
-  color: $gray-black;
-  font-size: 30px;
+  color: $red;
+  font-size: 15px;
+  font-weight: bold;
   margin: 0 auto;
 }
 

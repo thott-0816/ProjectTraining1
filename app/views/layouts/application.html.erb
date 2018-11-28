@@ -12,7 +12,7 @@
   <body>
     <div class="resize">
       <%= render "layouts/header" %>
-      <div class="main pt-30 pb-350">
+      <div class="content main pt-30 pb-350">
         <% flash.each do |message_type, message| %>
           <%= content_tag(:div, message, class: "time-out alert alert-#{message_type}") %>
         <% end %>

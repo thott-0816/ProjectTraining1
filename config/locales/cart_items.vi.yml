@@ -1,7 +1,13 @@
 vi:
   cart_items:
     btn_show_cart: "Xem giỏ hàng"
+    btn_added: "Đã thêm"
+    confirm_delete: "Bạn có chắc không?"
     total_price: "Tổng giá:"
     index:
       course: "Khóa học"
       price: "Giá"
+    destroy:
+      delete_success: "Đã xóa khóa học"
+      delete_fail: "Lỗi, thử lại!"
+      not_cart_item: "Không tìm thấy khóa học"

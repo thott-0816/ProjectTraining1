@@ -10,10 +10,18 @@
   <hr class="line">
   <div class="row">
     <div class="col-md-6 col-sm-6">
-      <p class="price">$29,90</p>
+      <p class="price"><%= number_to_currency course.price_sale, locale: :vi %></p>
+      <% if course.percent_sale > 0 %>
+        <p class="price-course"><%= number_to_currency course.price, locale: :vi %></p>
+      <% end %>
     </div>
-    <div class="col-md-6 col-sm-6">
-      <button class="btn btn-success right" > BUY course </button>
+    <div class="col-md-6 col-sm-6 btn-add-cart-<%= course.id %>">
+      <% if user_signed_in? && check_course(course.id) %>
+        <button class="btn btn-warning btn-added" disabled><%= t "cart_items.btn_added" %></button>
+      <% else %>
+        <%= link_to t("button.buy_course"), cart_items_path(course_id: course.id), method: :post,
+          class: "btn btn-success right", remote: true %>
+      <% end %>
     </div>
   </div>
 </span>
