@@ -1,0 +1,8 @@
+en:
+  category:
+    index:
+      not_found: "Category not found"
+      sussces: "Sussces"
+    show:
+      not_found: "Category not found"
+      sussces: "Sussces"

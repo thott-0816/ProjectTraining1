@@ -1,0 +1,8 @@
+en:
+  category:
+    index:
+      not_found: "Không tìm thấy thể loại"
+      sussces: "Thành công"
+    show:
+      not_found: "Không tìm thấy thể loại"
+      sussces: "Thành công"

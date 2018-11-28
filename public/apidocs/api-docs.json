@@ -4,14 +4,26 @@
   "basePath": "http://localhost:3000",
   "apis": [
     {
+      "path": "/apidocs/api/v1/sessions.{format}",
+      "description": "Login"
+    },
+    {
+      "path": "/apidocs/api/v1/users.{format}",
+      "description": "User management"
+    },
+    {
+      "path": "/apidocs/api/v1/categories.{format}",
+      "description": "Category management"
+    },
+    {
       "path": "/apidocs/api/v1/courses.{format}",
-      "description": "User Management"
+      "description": "Course Management"
     }
   ],
   "authorizations": null,
   "info": {
-    "title": "Application ahihi",
-    "description": "Rails API documention with Swagger UI.",
+    "title": "Document api for project training edulearning",
+    "description": "API for project training edulearning",
     "termsOfServiceUrl": "",
     "contact": ""
   }

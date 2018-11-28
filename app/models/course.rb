@@ -59,4 +59,18 @@ class Course < ApplicationRecord
   def price_sale
     price * (100 - percent_sale) / 100
   end
+
+  def load_structure
+    result = {
+      id: id,
+      name: name,
+      description: description,
+      thumbnail: thumbnail,
+      rate_average: rate_average,
+      user_id: user_id,
+      category_id: category_id,
+      comments: comments.select(:id, :content, :parent_id, :user_id)
+    }
+    result
+  end
 end

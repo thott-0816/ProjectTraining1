@@ -1,0 +1,5 @@
+en:
+  session:
+    create:
+      failed: "Login fails"
+      sussces: "Login sussces"

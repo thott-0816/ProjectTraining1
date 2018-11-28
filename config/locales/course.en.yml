@@ -28,6 +28,8 @@ en:
       create_comment: "create a comment"
       created: "Posted at"
       holder_text: "Input to comment"
+      not_found: "Course not found"
+      sussces: "Sussces"
     edit:
       edit_course: "Edit course"
     comment:

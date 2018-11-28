@@ -1,0 +1,35 @@
+vi:
+  swagger:
+    bad_request: "Yêu cầu thất bại"
+    locale: "Ngôn ngữ (en/vi)"
+    not_found: "Không tìm thấy %{model_name} "
+    sussces: "Thành công"
+    sessions:
+      email: "Thư điện tử"
+      notes: "Đăng nhập tài khoản thành công và nhận token"
+      password: "mật khẩu"
+      summary: "Đăng nhập tài khoản"
+      tile: "Đăng nhập"
+    user:
+      email: "Thư điện tử"
+      name: "Tên người dùng"
+      notes: "Người sử dụng tạo tài khoản"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      summary: "Tạo tài khoản"
+      tile: "Quản lý người dùng"
+    course:
+      category: "Id thể loại"
+      notes: "Lấy những thông tin của khóa học"
+      summary: "Thông tin của khóa học"
+      title: "Quản lý khóa học"
+    category:
+      tile: "Quản lý thể loại"
+      index:
+        notes: "Lấy thông tin các thể loại"
+        summary: "Thông tin tất cả thể loại"
+      show:
+        category: "Id thể loại"
+        notes: "Lấy những khóa học nằm trong thể loại"
+        summary: "Lấy những khóa học nằm trong thể loại"
+
