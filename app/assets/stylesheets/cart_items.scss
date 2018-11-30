@@ -26,6 +26,11 @@
   text-align: center;
 }
 
+.full-items {
+  max-height: 450px;
+  overflow-y: auto;
+}
+
 .img-cart-home {
   width: 30%;
   height: 30%;
@@ -39,7 +44,12 @@
 
 .many-items {
   max-height: 200px;
-  overflow: auto;
+  overflow-y: auto;
+}
+
+.no-course {
+  color: $red;
+  font-weight: bold;
 }
 
 .price-course {

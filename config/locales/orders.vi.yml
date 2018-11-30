@@ -1,0 +1,5 @@
+vi:
+  orders:
+    purchase_success: "Đã thanh toán!"
+    payment_title: "Thanh toán"
+    number_course: "--- %{number_course} khóa học ---"

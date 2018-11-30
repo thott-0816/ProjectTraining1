@@ -64,3 +64,7 @@ end
     course_id: Course.order("RAND()").first.id
   )
 end
+
+Wallet.create!(
+  user_id: 2
+)

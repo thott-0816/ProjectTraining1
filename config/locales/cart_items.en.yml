@@ -6,6 +6,7 @@ en:
     total_price: "Total price:"
     index:
       course: "Course"
+      no_course: "No selected course!"
       price: "Price"
     destroy:
       delete_success: "Deleted the course!"

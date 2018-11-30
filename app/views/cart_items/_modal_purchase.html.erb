@@ -1,0 +1,26 @@
+<div class="modal fade" id="modal-purchase" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title"><%= t "orders.payment_title" %></h3>
+        <h5><%= t "orders.number_course", number_course: cart_items.count %></h5>
+      </div>
+
+      <div class="modal-body">
+        <div class="full-items">
+          <% cart_items.each do |ci| %>
+            <%= image_tag ci.course.thumbnail.url, class: "img-items-cart" %><%= ci.course.name %> ~ 
+            <b><%= number_to_currency ci.course.price_sale, locale: :vi %></b><hr>
+          <% end %>
+        </div>
+        <h3><%= t "cart_items.total_price" %>
+        <b><%= number_to_currency total_price, locale: :vi %></b></h3>
+      </div>
+
+      <div class="modal-footer">
+        <%= link_to t("button.purchase_confirm"), orders_path, method: :post, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
