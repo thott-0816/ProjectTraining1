@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "home#index"
     post "/newcomment", to: "courses#newcomment", as: "newcomment"
+    delete "/cart_items", to: "cart_items#destroy_cart_item_not_login", as: "destroy_cart_item_not_login"
     resources :search, only: :index
     resources :categories, only: :show
     resources :courses do

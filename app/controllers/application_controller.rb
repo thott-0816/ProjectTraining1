@@ -40,8 +40,22 @@ class ApplicationController < ActionController::Base
 
   def load_cart
     if user_signed_in?
+      add_cart_item_login
       @cart_items = current_user.cart_items.includes(:course)
       @total_price = CartItem.total_price @cart_items
+    else
+      @array_course = Course.array_course session[:array_course_id]
+      @total_price = CartItem.total_price_not_login @array_course
+    end
+  end
+
+  def add_cart_item_login
+    if session[:array_course_id]
+      session[:array_course_id].each do |course_id|
+        return if helpers.check_course(course_id)
+        current_user.cart_items.create!(course_id: course_id) if current_user
+        session[:array_course_id].delete(course_id)
+      end
     end
   end
 end

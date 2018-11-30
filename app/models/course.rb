@@ -44,6 +44,8 @@ class Course < ApplicationRecord
     ransack(description_cont: description).result
   end)
 
+  scope :array_course, -> (array_course_id){where id: array_course_id}
+
   def list_lessons?
     Lesson.where course_id: id
   end
