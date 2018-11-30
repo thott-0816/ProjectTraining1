@@ -1,0 +1,15 @@
+<div class="container cart-index">
+  <% if @orders.count > 0 %>
+    <h3><b><div class="row content">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-5"><%= t ".date_payment" %></div>
+      <div class="col-sm-5"><%= t ".total" %></div><hr>
+      <div class="col-sm-1"></div>
+    </div></b></h3><hr>
+    <%= render partial: "order", collection: @orders %>
+    <div class="page-center"><%= paginate @orders, theme: "twitter-bootstrap-3" %></div>
+  <% else %>
+    <h3 class="no-course"><%= t ".empty_history" %></h3><hr>
+    <%= link_to t(".view_courses"), root_path, class: "btn btn-default" %>
+  <% end %>
+</div>

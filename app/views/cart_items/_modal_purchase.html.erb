@@ -10,7 +10,7 @@
       <div class="modal-body">
         <div class="full-items">
           <% cart_items.each do |ci| %>
-            <%= image_tag ci.course.thumbnail.url, class: "img-items-cart" %><%= ci.course.name %> ~ 
+            <%= image_tag ci.course.thumbnail.url, class: "img-items-cart" %><%= "#{ci.course.name} ~ " %>
             <b><%= number_to_currency ci.course.price_sale, locale: :vi %></b><hr>
           <% end %>
         </div>

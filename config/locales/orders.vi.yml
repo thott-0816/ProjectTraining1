@@ -3,3 +3,8 @@ vi:
     purchase_success: "Đã thanh toán!"
     payment_title: "Thanh toán"
     number_course: "--- %{number_course} khóa học ---"
+    index:
+      date_payment: "Ngày mua"
+      total: "Tổng tiền"
+      empty_history: "Lịch sử trống!"
+      view_courses: "Xem các khóa học"

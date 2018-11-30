@@ -1,0 +1,21 @@
+<div class="row order-item" data-counter="<%= order_counter + 1 %>">
+  <h4><div class="col-sm-1"><%="# #{order_counter + 1}" %></div>
+  <div class="col-sm-5"><%= order.created_at.strftime("%d/%m/%Y - %R") %></div>
+  <div class="col-sm-5"><b><%= number_to_currency order.total, locale: :vi %></b></div>
+  <div class="col-sm-1">
+    <span class="fa fa-chevron-up icon-up-down-<%= order_counter + 1 %>"></span>
+    <span class="fa fa-chevron-down hide-detail icon-up-down-<%= order_counter + 1 %>"></span>
+  </div></h4>
+</div>
+<div class="content">
+  <% order.order_details.each do |od| %>
+    <div class="row hide-detail order-detail-<%= order_counter + 1 %>">
+      <%= link_to course_path od.course do %>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5"><%= image_tag od.course.thumbnail.url, class: "img-order-detail" %>
+        <%= od.course.name %></div>
+      <% end %>
+      <div class="col-sm-6"><%= number_to_currency od.price, locale: :vi %></div>
+    </div>
+  <% end %>
+</div><hr>

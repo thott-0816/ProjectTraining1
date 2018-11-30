@@ -77,7 +77,8 @@ class CoursesController < ApplicationController
   def load_course
     @course = Course.friendly.find_by_slug params[:id]
     @ratings = Course.list_ratings_comment?(params[:id]).ratings
-    @comments = Course.list_ratings_comment?(params[:id]).comments.page(params[:page]).per(5)
+    @comments = Course.list_ratings_comment?(params[:id]).comments
+      .parent_comment?.page(params[:page]).per Settings.per_page
     @commentrate = CommentRate.new
     unless @course
       flash[:danger] = t "course_not_found"

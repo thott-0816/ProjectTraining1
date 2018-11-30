@@ -3,3 +3,8 @@ en:
     purchase_success: "Payment success!"
     payment_title: "Payment"
     number_course: "--- %{number_course} course ---"
+    index:
+      date_payment: "Date of purchase"
+      total: "Total price"
+      empty_history: "Empty history!"
+      view_courses: "View courses"

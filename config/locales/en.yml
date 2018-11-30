@@ -21,6 +21,7 @@ en:
       taught_by: "Course taught by"
       total_student: "Total Students:"
       write_something: "Click Account Settings to write something about yourself..."
+      shopping_history: "Shopping history"
     avatar_size_error: "should be less than 5MB"
     registrations:
       new:
