@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "home#index"
     post "/newcomment", to: "courses#newcomment", as: "newcomment"
+    post "/walletcode", to: "users#update_wallet", as: "update_wallet"
     delete "/cart_items", to: "cart_items#destroy_cart_item_not_login", as: "destroy_cart_item_not_login"
     resources :search, only: :index
     resources :categories, only: :show
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :users
       resources :categories
+      resources :giftcodes, only: :index
       resources :courses do
         resources :lessons
       end

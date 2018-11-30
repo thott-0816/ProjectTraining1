@@ -1,0 +1,11 @@
+<% if @mess.present? %>
+  alert('<%= @mess %>');
+<% else %>
+  var noti = $('#notifi');
+  var price_old = noti.find('span').text();
+  var price = ' <%= @giftcode.value %> ';
+  $('#txt-giftcode').val('');
+  noti.text('Ban da nap: ' + price +
+   'vào tài khoản, Số tiền trong tài khoản hiện có là: ' +
+   (parseInt(price_old) + parseInt(price)));
+<% end %>
