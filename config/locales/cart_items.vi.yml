@@ -6,6 +6,7 @@ vi:
     total_price: "Tổng giá:"
     index:
       course: "Khóa học"
+      no_course: "Không có khóa học được chọn!"
       price: "Giá"
     destroy:
       delete_success: "Đã xóa khóa học"

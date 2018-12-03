@@ -17,6 +17,7 @@ class Ability
           can [:update, :destroy], [Comment, Rating], user_id: user.id
           can :newcomment, Course
           can :manage, CartItem
+          can :create, Order
           if user.lecture?
             can :manage, [Course, Lesson]
           end

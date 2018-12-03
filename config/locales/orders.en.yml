@@ -1,0 +1,5 @@
+en:
+  orders:
+    purchase_success: "Payment success!"
+    payment_title: "Payment"
+    number_course: "--- %{number_course} course ---"
