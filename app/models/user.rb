@@ -17,6 +17,8 @@ class User < ApplicationRecord
   validates_processing_of :avatar
   validate :avatar_size
 
+  delegate :account, to: :wallet, prefix: :wallet, allow_nil: true
+
   enum role: {student: 0, lecture: 1, admin: 2}
 
   scope :can_post_course, -> { where(role: roles.except(:student).values).collect{|user| [user.name, user.id]} }
@@ -27,6 +29,10 @@ class User < ApplicationRecord
 
   def check_rating? course_id
     ratings.where(course_id: course_id).present?
+  end
+
+  def update_wallet? price
+    wallet.nil? ? Wallet.create!(account: price, user_id: id) : wallet.increment!(:account, price)
   end
 
   class << self

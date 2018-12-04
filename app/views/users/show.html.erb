@@ -63,6 +63,16 @@
     <div class="profile-content">
       <% if @user == current_user %>
         <%= t ".write_something" %>
+        <br><br>
+        <p id="notifi"> Số tiền trong tài khoản của bạn là: 
+          <span><%= @current_user.wallet_account || 0 %></span>
+        </p>
+        <%= form_tag update_wallet_url, method: :POST, remote: true, class: "form-inline" do %>
+          <div class="form-group">
+            <%= text_field_tag :code, "", placeholder: "giftcode", id: "txt-giftcode", class: "form-control",required: true %>
+          </div>
+          <button type="submit" class="btn btn-success">Send</button>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -13,7 +13,7 @@ class Ability
       else
         unless user.admin?
           can :read, :all
-          can :update, User, id: user.id
+          can [:update, :update_wallet], User, id: user.id
           can [:update, :destroy], [Comment, Rating], user_id: user.id
           can :newcomment, Course
           can :manage, CartItem
