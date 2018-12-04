@@ -42,11 +42,11 @@
           <% end %>
         <% end %>
         <div id="comments">
-          <% @comments.parent_comment?.each do |comment| %>
+          <% @comments.each do |comment| %>
             <%= render partial: "comment", object: comment, as: "comment" %>
           <% end %>
         </div>
-        <div class="page-course page-center">
+        <div class="page-center">
           <%= paginate @comments, theme: "twitter-bootstrap-3" %>
         </div>
 

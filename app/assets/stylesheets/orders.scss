@@ -1,0 +1,12 @@
+@import 'colors';
+
+.img-order-detail {
+  width: 50px;
+  height: 40px;
+  margin: 5px;
+}
+
+.order-item:hover {
+  cursor: pointer;
+  color: $blue-moke;
+}

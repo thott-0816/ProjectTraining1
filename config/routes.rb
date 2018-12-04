@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :update
     resources :cart_items
-    resources :orders
+    resources :orders, only: %i(index create)
     devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions",
     passwords: "users/passwords"}, skip: :omniauth_callbacks
     resources :users, only: :show

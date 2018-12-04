@@ -21,6 +21,7 @@ vi:
       taught_by: "Khóa học được đăng bởi "
       total_student: "Tổng số học sinh:"
       write_something: "Nhấn Thiết lập tài khoản để giới thiệu về bản thân..."
+      shopping_history: "Lịch sử mua sắm"
     avatar_size_error: "phải nhỏ hơn 5MB"
     registrations:
       new:

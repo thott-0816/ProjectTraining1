@@ -48,6 +48,13 @@
               <% end %>
             </li>
           <% end %>
+          <% if @user == current_user && !current_user.admin? %>
+            <li>
+              <%= link_to orders_path do %>
+                <i class="fa fa-history"></i><%= t ".shopping_history" %>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -69,7 +76,7 @@
             <%= render partial: "shared/course", collection: @courses %>
           </div>
           <div class="text-center">
-            <% if @courses.size > Settings.course.per_page %>
+            <% if @user.courses.size > Settings.course.item %>
               <%= link_to t(".load_more"), user_path(page: @courses.current_page + Settings.show_more),
                 id: "load-more-course", remote: true, class: "btn btn-default" %>
             <% end %>

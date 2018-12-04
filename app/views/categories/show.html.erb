@@ -6,7 +6,7 @@
       <%= render partial: "shared/course", collection: @courses %>
     </div>
     <div class="text-center">
-      <% if @courses.size > Settings.course.per_page %>
+      <% if @category.courses.size > Settings.course.item %>
         <%= link_to t("users.show.load_more"), category_path(page: @courses.current_page + Settings.show_more),
           id: "load-more-course", remote: true, class: "btn btn-default" %>
       <% end %>
