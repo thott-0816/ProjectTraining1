@@ -1,0 +1,23 @@
+<%= link_to user_path(user) do %>
+  <div class="list-group-item follow-page">
+    <div class="media col-md-1">
+      <figure class="pull-left">
+        <%= image_tag user.avatar_url, class: "media-object img-rounded img-responsive img-user-size" %>
+      </figure>
+    </div>
+    <div class="col-md-6" style="line-height: 100px;">
+      <h4 class="list-group-item-heading"><%= user.name %></h4>
+      <p class="list-group-item-text"><%= user.email %></p>
+      <p class="list-group-item-text"><i><%= user.role %></i></p>
+    </div>
+    <div class="col-md-offset-4 col-md-1 follow-form-<%= user.id %>">
+      <% if current_user != user %>
+        <% if @user.following? user %>
+          <%= render partial: "unfollow", locals: { user: user } %>
+        <% else %>
+          <%= render partial: "follow", locals: { user: user } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

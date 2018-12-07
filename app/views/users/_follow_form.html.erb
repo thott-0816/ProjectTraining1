@@ -1,0 +1,9 @@
+<% if current_user != @user %>
+  <div class="profile-follow follow-form-<%= @user.id %>">
+    <% if current_user.following? @user %>
+      <%= render partial: "unfollow", locals: { user: @user } %>
+    <% else %>
+      <%= render partial: "follow", locals: { user: @user } %>
+    <% end %>
+  </div>
+<% end %>

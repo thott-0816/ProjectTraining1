@@ -18,6 +18,7 @@ class Ability
           can :newcomment, Course
           can :manage, CartItem
           can :create, Order
+          can [:following, :followers], User
           if user.lecture?
             can :manage, [Course, Lesson]
           end

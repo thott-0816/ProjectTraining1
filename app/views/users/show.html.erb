@@ -18,45 +18,11 @@
       </div>
       <% unless @user == current_user %>
         <div class="profile-userbuttons">
-          <button type="button" class="btn btn-success btn-sm"><%= t ".follow" %></button>
+          <%= render "follow_form" %>
           <button type="button" class="btn btn-danger btn-sm"><%= t ".message" %></button>
         </div>
       <% end %>
-      <div class="profile-usermenu">
-        <ul class="nav">
-          <% unless @user.role == "student" %>
-            <li>
-              <a href="#">
-              <i class="glyphicon glyphicon-user"></i>
-              <%= t ".total_student" %> <span class="user-info"></span></a>
-            </li>
-            <li>
-              <a href="#">
-              <i class="glyphicon glyphicon-book"></i>
-              <%= t ".course" %> <span class="user-info"><%= @user.courses.size %></span></a>
-            </li>
-            <li>
-              <a href="#">
-              <i class="glyphicon glyphicon-comment"></i>
-              <%= t ".review" %> <span class="user-info"><%= @count_review if @user.courses %></span></a>
-            </li>
-          <% end %>
-          <% if @user == current_user %>
-            <li>
-              <%= link_to edit_user_registration_path do %>
-                <i class="glyphicon glyphicon-cog"></i><%= t ".acount_settings" %>
-              <% end %>
-            </li>
-          <% end %>
-          <% if @user == current_user && !current_user.admin? %>
-            <li>
-              <%= link_to orders_path do %>
-                <i class="fa fa-history"></i><%= t ".shopping_history" %>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+      <%= render "shared/stats" %>
     </div>
   </div>
   <div class="col-md-10">

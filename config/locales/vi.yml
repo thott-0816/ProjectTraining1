@@ -15,6 +15,8 @@ vi:
       acount_settings: "Thiết lập tài khoản"
       course: "Khóa học:"
       follow: "Theo dõi"
+      followers: "Người theo dõi:"
+      following: "Đang theo dõi:"
       load_more: "Xem thêm"
       message: "Nhắn tin"
       review: "Lượt đánh giá:"
@@ -22,6 +24,11 @@ vi:
       total_student: "Tổng số học sinh:"
       write_something: "Nhấn Thiết lập tài khoản để giới thiệu về bản thân..."
       shopping_history: "Lịch sử mua sắm"
+      unfollow: "Bỏ theo dõi"
+    show_follow:
+      following: "Đang theo dõi"
+      followers: "Người theo dõi"
+      list_empty: "Danh sách trống!"
     avatar_size_error: "phải nhỏ hơn 5MB"
     registrations:
       new:
