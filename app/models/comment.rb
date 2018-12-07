@@ -13,4 +13,8 @@ class Comment < ApplicationRecord
   def comment_child?
     Comment.where(parent_id: id).order created_at: :desc
   end
+
+  def block_cmt_child start
+    comment_child?.limit(Settings.per_page).offset(start)
+  end
 end

@@ -35,3 +35,4 @@ vi:
       edit_course: "Chỉnh sửa khóa học"
     comment:
       message_save_cmt: "Nhấn <b>Enter </b>để <b>Lưu</b>, <b>Esc </b>để <b>Hủy</b>"
+      show_more: "Xem thêm ..."

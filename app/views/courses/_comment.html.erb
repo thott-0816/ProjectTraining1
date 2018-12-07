@@ -33,10 +33,17 @@
       </div>
     </div>
     <div class="post-footer">
-      <ul class="comments-list list-<%= comment.id %>">
-        <% comment.comment_child?.each do |child_comment| %>
-          <%= render "child_comment", child_comment: child_comment %>
-        <% end %>
+      <ul class="comments-list">
+        <span class="list-<%= comment.id %>"></span>
+        <span class="block-child-0">
+          <% comment.block_cmt_child(0).each do |child_comment| %>
+            <%= render "child_comment", child_comment: child_comment %>
+          <% end %>
+          <% if comment.comment_child?.count > Settings.per_page %>
+            <p class="order-item show-block" data-block="1"><%= t "course.comment.show_more" %></p>
+          <% end %>
+        </span>
+        <%= show_more_cmt comment %>
       </ul>
       <%= render "write_comment", comment: comment if user_signed_in? %>
     </div>

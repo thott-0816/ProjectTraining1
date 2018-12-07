@@ -65,6 +65,13 @@ $(document).ready(function() {
       }
     });
   });
+
+  $('.show-block').on('click', function () {
+    let block = $(this).data('block');
+    $(`.block-child-${block}`).removeClass('hidden');
+    $(this).addClass('hidden');
+  });
+
 });
 
 function hide_show_edit_cmt(btnCmt, editCmt, messageSave, showCmt) {
