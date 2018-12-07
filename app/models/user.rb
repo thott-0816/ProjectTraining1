@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :courses, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :cart_items, dependent: :destroy
+  has_many :notifications, dependent: :destroy
   has_one :wallet, dependent: :destroy
 
   validates :name, presence: true

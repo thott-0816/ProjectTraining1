@@ -3,7 +3,7 @@
     <span class="cart-notice"><%= cart_items.count %></span>
   </i>
 <% end %>
-<% if @cart_items.count == 0 %>
+<% if cart_items.count == 0 %>
   <ul class="cart-index"><b><%= link_to t("cart_items.index.no_course"), "#" %></b></ul>
 <% else %>
   <ul>
