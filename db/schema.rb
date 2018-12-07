@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_062622) do
+ActiveRecord::Schema.define(version: 2018_12_07_085232) do
 
   create_table "cart_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -59,6 +59,21 @@ ActiveRecord::Schema.define(version: 2018_12_07_062622) do
     t.index ["description", "name"], name: "courses_description_name_full_text_search", type: :fulltext
     t.index ["slug"], name: "index_courses_on_slug"
     t.index ["user_id"], name: "index_courses_on_user_id"
+  end
+
+  create_table "delayed_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
   create_table "giftcodes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -154,4 +169,5 @@ ActiveRecord::Schema.define(version: 2018_12_07_062622) do
   end
 
   add_foreign_key "notifications", "users"
+  add_foreign_key "ratings", "courses", name: "fk_ratings_1"
 end

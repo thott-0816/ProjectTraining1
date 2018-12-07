@@ -1,0 +1,4 @@
+vi:
+  notification:
+    create:
+      content: "%{name} Đã tạo khóa học: %{course_name}"
