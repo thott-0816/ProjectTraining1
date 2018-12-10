@@ -7,6 +7,7 @@ end
 Rails.application.routes.draw do
   devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   draw :api
+  mount ActionCable.server, at: "/cable"
   scope "(:locale)", locale: /en|vi/ do
     root "home#index"
     post "/newcomment", to: "courses#newcomment", as: "newcomment"

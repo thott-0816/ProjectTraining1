@@ -7,12 +7,30 @@ User.create!(
 )
 
 User.create!(
-  name: "pham van tong",
-  email: "user@gmail.com",
+  name: "pham anh tuan",
+  email: "tuan@gmail.com",
   password: "123456",
-  role: "student",
+  role: "lecture",
   avatar: nil
 )
+
+5.times do |i|
+  User.create!(
+    name: "User #{i}",
+    email: "user#{i}@gmail.com",
+    password: "123456",
+    role: "student",
+    avatar: nil
+  )
+end
+
+5.times do |i|
+  Relationship.create!(
+    follower_id: i+3,
+    followed_id: 2,
+  )
+end
+
 
 10.times do |i|
   Category.create!(
