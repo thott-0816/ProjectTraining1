@@ -63,7 +63,8 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit :name, :description, :rate_average, :thumbnail, :category_id
+    params.require(:course).permit :name, :description, :price,
+      :percent_sale, :rate_average, :thumbnail, :category_id
   end
 
   def load_all_course

@@ -3,4 +3,4 @@
 <% else %>
   $('.show-cart-not-login').html('<%= j render "layouts/show_cart_not_login", array_course: @array_course, total_price: @total_price %>');
 <% end %>
-$('.btn-add-cart-<%= params[:course_id] %>').html('<button class="btn btn-warning btn-added" disabled><%= t "cart_items.btn_added" %></button>');
+$('.btn-add-cart-<%= params[:course_id] %>').html('<button class="btn btn-warning" disabled><%= t "cart_items.btn_added" %></button>');

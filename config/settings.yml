@@ -2,6 +2,9 @@ collection_item: 4
 show_more: 1
 course:
   item: 6
+  min_price: 0
+  min_percent_sale: 0
+  max_percent_sale: 100
 api:
   client_name: "client"
   company: "framgia"

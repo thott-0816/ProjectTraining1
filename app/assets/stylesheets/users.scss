@@ -216,8 +216,10 @@ body {
 }
 
 .thumbnail-price {
+  color: $red;
   float: right;
   font-size: 20px;
+  font-weight: bold;
   line-height: auto;
 }
 

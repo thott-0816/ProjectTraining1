@@ -21,6 +21,16 @@
                     selected: params[:parent_id] %>
                 </div>
                 <div class="form-group">
+                  <%= f.input :price, label: t("course.index.price"), placeholder: t("course.new.place_name"),
+                    input_html: { class: "form-control", min: Settings.course.min_price } %>
+                </div>
+                <div class="form-group">
+                  <%= f.input :percent_sale, label: t("course.index.percent_sale"),
+                    placeholder: t("course.new.place_name"),
+                    input_html: { class: "form-control", min: Settings.course.min_percent_sale,
+                    max: Settings.course.min_percent_sale } %>
+                </div>
+                <div class="form-group">
                   <%= f.input :description, label: t("course.new.description"),
                     placeholder: t("course.new.description_ph"),
                     input_html: { class: "form-control" } %>

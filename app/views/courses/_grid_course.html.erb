@@ -2,12 +2,14 @@
   <tr class="odd gradeX">
     <td><%= link_to course.name, course_lessons_path(course) %>
     <td><%= link_to course.user_name, user_path(course.user) %></td>
+    <td><%= course.price %></td>
+    <td><%= course.percent_sale %></td>
     <td><%= course.category_name %></td>
     <td><%= course.description %></td>
     <td class="text-center"><%= course.rate_average %></td>
     <td><%= course.created_at.strftime("%m/%d/%Y") %></td>
     <td>
-      <%= image_tag course.thumbnail.url, class: "img-rounded img-thumb-size" %>
+      <%= image_tag course.thumbnail.url, class: "img-thumb-size" %>
     </td>
     <td>
       <%= link_to edit_course_path(course), class: "btn btn-success" do %>

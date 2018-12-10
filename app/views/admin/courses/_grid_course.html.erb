@@ -2,6 +2,8 @@
   <tr class="odd gradeX">
     <td><%= link_to course.name, admin_course_lessons_path(course) %>
     <td><%= link_to course.user_name, admin_user_path(course.user) %></td>
+    <td><%= course.price %></td>
+    <td><%= course.percent_sale %></td>
     <td><%= link_to course.category_name, admin_category_path(course.category) %></td>
     <td><%= course.description %></td>
     <td class="text-center"><%= course.rate_average %></td>
