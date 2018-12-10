@@ -1,0 +1,4 @@
+en:
+  notification:
+    create:
+      content: "%{name} just created new course: %{course_name}"

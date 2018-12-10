@@ -1,20 +1,18 @@
 <%= link_to "#" do %>
   <i class="fa fa-bell">
-    <span class="cart-notice">10</span>
+    <span class="cart-notice">
+      <%= current_user.notifications.count %>
+    </span>
   </i>
 <% end %>
-<%# if notification.count == 0 %>
-  <!-- <ul class="cart-index"><b><%= link_to "Không có thông báo!", "#" %></b></ul> -->
-<%# else %>
+<% if current_user.notifications.count == 0 %>
+  <ul class="cart-index"><b><%= link_to "Không có thông báo!", "#" %></b></ul>
+<% else %>
   <ul>
-    <li>
-      <%= link_to "Notification 1", "#" %>
-    </li>
-    <li>
-      <%= link_to "Notification 2", "#" %>
-    </li>
-    <li>
-      <%= link_to "...", "#" %>
-    </li>
+    <% current_user.notifications.each do |noti| %>
+      <li>
+        <%= link_to noti.content, course_path(noti.slug) %>
+      </li>
+    <% end %>
   </ul>
-<%# end %>
+<% end %>

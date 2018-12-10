@@ -17,6 +17,8 @@ class Course < ApplicationRecord
   delegate :name, :avatar, :provider, :email, to: :user, prefix: :user
   delegate :name, to: :category, prefix: :category
 
+  after_create :send_notification
+
   scope :list_all?, -> { order(created_at: :desc).select :id, :name, :description,
     :rate_average, :thumbnail, :user_id, :category_id, :created_at, :slug }
 
@@ -74,5 +76,10 @@ class Course < ApplicationRecord
       comments: comments.select(:id, :content, :parent_id, :user_id)
     }
     result
+  end
+
+  private
+  def send_notification
+    ApplicationJob.perform_now self
   end
 end
