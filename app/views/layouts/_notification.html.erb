@@ -1,6 +1,6 @@
 <%= link_to "#" do %>
   <i class="fa fa-bell">
-    <span class="cart-notice">
+    <span class="cart-notice" id="count-notification">
       <%= current_user.notifications.count %>
     </span>
   </i>
@@ -8,7 +8,7 @@
 <% if current_user.notifications.count == 0 %>
   <ul class="cart-index"><b><%= link_to "Không có thông báo!", "#" %></b></ul>
 <% else %>
-  <ul>
+  <ul id="notification-course">
     <% current_user.notifications.each do |noti| %>
       <li>
         <%= link_to noti.content, course_path(noti.slug) %>
