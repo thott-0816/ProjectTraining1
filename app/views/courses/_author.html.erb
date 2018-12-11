@@ -5,7 +5,7 @@
         <img src="<%= @course.user_avatar.url %>" class="img-circle img-author" />
       </div>
       <div class="col-sm-6 col-md-8">
-        <h4><%= @course.user_name %></h4>
+        <h4><%=link_to @course.user_name, user_path(@course.user) %></h4>
         <small>
           <cite title="San Francisco, USA"><%= @course.user_provider %>
             <i class="glyphicon glyphicon-map-marker"></i>

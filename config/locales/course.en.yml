@@ -10,6 +10,8 @@ en:
       rate_average: "Rate average"
       thumbnail: "Thumbnail"
       title: "List course"
+      price: "Price (VNĐ)"
+      percent_sale: "Sale (%)"
     new:
       description: "Description"
       description_ph: "Enter description"

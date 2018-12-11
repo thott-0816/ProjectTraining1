@@ -4,7 +4,7 @@
     <div class="blog-content">
       <h4><%= link_to course.name, course_path(course), class: "blog-headline" %></h4>
       <div class="meta d-flex align-items-center">
-        <%= link_to course.user_name, course_path(course) %>
+        <%= link_to course.user_name, user_path(course.user) %>
         <span><i class="fa fa-circle" aria-hidden="true"></i></span>
         <%= link_to course.created_at.strftime("%d/%m/%Y"), course_path(course) %>
       </div>
@@ -14,8 +14,18 @@
       </div>
       <hr/>
       <div>
-        <button class="btn btn-success mt-3"><%= t ".buy_course" %></button>
-        <p class="thumbnail-price price">$29,90</p>
+        <span class="btn-add-cart-<%= course.id %>">
+          <% if user_signed_in? && check_course(course.id) %>
+            <button class="btn btn-warning mt-3" disabled><%= t "cart_items.btn_added" %></button>
+          <% else %>
+            <%= link_to t("button.buy_course"), cart_items_path(course_id: course.id), method: :post,
+              class: "btn btn-success mt-3", remote: true %>
+          <% end %>
+        </span>
+        <p class="thumbnail-price"><%= number_to_currency course.price_sale, locale: :vi %></p>
+        <% if course.percent_sale > 0 %>
+          <br><p class="btn-added price-course"><%= number_to_currency course.price, locale: :vi %></p>
+        <% end %>
       </div>
     </div>
   </div>

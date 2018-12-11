@@ -11,6 +11,8 @@ vi:
       thumbnail: "Ảnh"
       title: "Danh sách khóa học"
       olala: "1111111111111111 vn"
+      price: "Giá (VNĐ)"
+      percent_sale: "Giảm giá (%)"
     new:
       description: "Mô tả"
       description_ph: "Nhập vào mô tả"

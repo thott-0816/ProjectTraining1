@@ -6,7 +6,19 @@
           <h2><%= @course.name %></h2>
         </div>
         <div class="control-box course-card sidebara">
-          <%= image_tag @course.thumbnail.url, class: "img-responsive" %>
+          <%= image_tag @course.thumbnail.url, class: "img-responsive" %><hr>
+          <h3 class="text-center no-course"><%= number_to_currency @course.price_sale, locale: :vi %></h3>
+          <% if @course.percent_sale > 0 %>
+            <p class="text-center price-course"><%= number_to_currency @course.price, locale: :vi %></p>
+          <% end %>
+          <div class="text-center btn-add-cart-<%= @course.id %>">
+            <% if user_signed_in? && check_course(@course.id) %>
+              <button class="btn btn-warning" disabled><%= t "cart_items.btn_added" %></button>
+            <% else %>
+              <%= link_to t("button.buy_course"), cart_items_path(course_id: @course.id), method: :post,
+                class: "btn btn-success btn-lg", remote: true %>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="col-md-8">

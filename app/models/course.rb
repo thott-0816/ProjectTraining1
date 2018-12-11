@@ -13,6 +13,10 @@ class Course < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true
+  validates :price, presence: true,
+    numericality: {greater_than_or_equal_to: 0}
+  validates :percent_sale, presence: true,
+    numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 100}
 
   delegate :name, :avatar, :provider, :email, to: :user, prefix: :user
   delegate :name, to: :category, prefix: :category
@@ -20,7 +24,7 @@ class Course < ApplicationRecord
   after_create :send_notification
 
   scope :list_all?, -> { order(created_at: :desc).select :id, :name, :description,
-    :rate_average, :thumbnail, :user_id, :category_id, :created_at, :slug }
+    :rate_average, :thumbnail, :user_id, :category_id, :created_at, :slug, :price, :percent_sale }
 
   scope :search_courses, (lambda do |text_search|
     where("MATCH (description, name) AGAINST ('#{text_search}')")
