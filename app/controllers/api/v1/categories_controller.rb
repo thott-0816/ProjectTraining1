@@ -21,20 +21,20 @@ class Api::V1::CategoriesController < Api::BaseController
   end
 
   def index
-    category = Category.category_select
+    category = Category.load_categorys
     if category
-      render_json category, I18n.t("category.index.sussces")
+      render_json category, I18n.t("category.index.sussces"), false, 200
     else
-      render_json true, I18n.t("category.index.not_found"), 404
+      render_json true, I18n.t("category.index.not_found"), 200
     end
   end
 
   def show
     category = Category.find_by(id: params[:id])
     if category
-      render_json category.courses, I18n.t("category.show.sussces")
+      render_json category.load_structure, I18n.t("category.show.sussces"), false, 200
     else
-      render_json nil, I18n.t("category.show.not_found"), true, 404
+      render_json nil, I18n.t("category.show.not_found"), true, 200
     end
   end
 end

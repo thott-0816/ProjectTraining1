@@ -17,6 +17,11 @@ class Category < ApplicationRecord
   scope :roots, -> parent_id{where(parent_id: parent_id)}
   scope :get_all_category, -> {select(:id, :name, :parent_id, :description, :slug)}
   scope :root_category, -> {select(:id, :name, :slug).where(parent_id: nil)}
+  scope :load_categorys, -> {select(:id, :name, :parent_id, :description, :thumbnail).map{|ca| ca.load_structure}}
+
+  def load_courses
+    courses.map{|c| c.load_structure.except(:comments)}
+  end
 
   def load_structure
     result = {
@@ -24,8 +29,8 @@ class Category < ApplicationRecord
       name: name,
       parent_id: parent_id,
       description: description,
-      thumbnail: thumbnail,
-      courses: courses
+      thumbnail: thumbnail_category(thumbnail),
+      courses: courses.map{|c| c.load_structure.except(:comments)}
     }
     result
   end
@@ -40,5 +45,15 @@ class Category < ApplicationRecord
 
   def should_generate_new_friendly_id?
     name_changed? || super
+  end
+
+  private
+  def thumbnail_category thumbnail
+    {
+      "url": thumbnail.url,
+      "big_url": thumbnail.big.url,
+      "standard_url": thumbnail.standard.url,
+      "thumb_url": thumbnail.thumb.url
+    }
   end
 end
