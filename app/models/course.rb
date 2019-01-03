@@ -68,15 +68,20 @@ class Course < ApplicationRecord
     price * (100 - percent_sale) / 100
   end
 
+  def load_lessons
+    lessons.map{|l| l.load_structure}
+  end
+
   def load_structure
     result = {
       id: id,
       name: name,
       description: description,
-      thumbnail: thumbnail,
+      thumbnail: thumbnail_course(thumbnail),
       rate_average: rate_average,
       user_id: user_id,
       category_id: category_id,
+      lessons: load_lessons,
       comments: comments.select(:id, :content, :parent_id, :user_id)
     }
     result
@@ -85,5 +90,14 @@ class Course < ApplicationRecord
   private
   def send_notification
     ApplicationJob.perform_now self
+  end
+
+  def thumbnail_course thumbnail
+    {
+      "url": thumbnail.url,
+      "big_url": thumbnail.big.url,
+      "standard_url": thumbnail.standard.url,
+      "thumb_url": thumbnail.thumb.url
+    }
   end
 end

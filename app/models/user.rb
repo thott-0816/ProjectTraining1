@@ -59,7 +59,7 @@ class User < ApplicationRecord
       name: name,
       email: email,
       provider: provider,
-      avatar: avatar,
+      avatar: avatar_user(avatar),
       role: role,
       uid: uid,
       created_at: created_at,
@@ -84,5 +84,14 @@ class User < ApplicationRecord
     if avatar.size > 5.megabytes
       errors.add :avatar, I18n.t("users.avatar_size_error")
     end
+  end
+
+  def avatar_user avatar
+    {
+      "url": avatar.url,
+      "big_url": avatar.big.url,
+      "standard_url": avatar.standard.url,
+      "thumb_url": avatar.thumb.url
+    }
   end
 end
