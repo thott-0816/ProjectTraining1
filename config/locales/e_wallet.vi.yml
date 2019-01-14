@@ -1,0 +1,25 @@
+vi:
+  e_wallets:
+    show:
+      not_found: "Không tìm thấy."
+    connect_credit:
+      email: "Thư điện tử: "
+      balances: "Số dư: "
+      vnd: " đồng."
+      connect_credit: "Liên kết thẻ tín dụng"
+      credit_search: "Nhập số thẻ tín dụng của bạn..."
+      credit_card_number: "Mã thẻ: "
+      bank: "Ngân hàng: "
+      card_type: "Kiểu thẻ: "
+      name: "Tên: "
+      connect: "Liên kết"
+    info:
+      info: "Thông tin ví"
+      user: "Thư điện tử: "
+      email: "Email: "
+      balances: "Số dư: "
+      vnd: " đồng."
+      credits_connected: "Thẻ tín dụng được liên kết: "
+      request_connect: "Bạn cần liên kết với thẻ tín dụng."
+      none: "Không có."
+      pay_in: "Nạp tiền"

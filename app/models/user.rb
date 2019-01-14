@@ -18,7 +18,8 @@ class User < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_one :wallet, dependent: :destroy
-
+  has_one :e_wallet, inverse_of: :user, dependent: :destroy
+  
   validates :name, presence: true
   validates_integrity_of :avatar
   validates_processing_of :avatar

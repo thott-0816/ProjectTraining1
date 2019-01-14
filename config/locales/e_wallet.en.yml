@@ -1,0 +1,25 @@
+en:
+  e_wallets:
+    show:
+      not_found: "Not found."
+    connect_credit:
+      email: "Email: "
+      balances: "Balances: "
+      vnd: " VND"
+      connect_credit: "Connect Credit Card"
+      credit_search: "Enter your credit card number..."
+      credit_card_number: "Number: "
+      bank: "Bank: "
+      card_type: "Type: "
+      name: "Name: "
+      connect: "Connect"
+    info:
+      info: "Wallet Infomation"
+      user: "Holder: "
+      email: "Email: "
+      balances: "Balances: "
+      vnd: " VND"
+      credits_connected: "Credits connected: "
+      request_connect: "You need to connect a credit card account."
+      none: "None"
+      pay_in: "Pay in"

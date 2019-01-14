@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_085232) do
+ActiveRecord::Schema.define(version: 2019_01_04_072357) do
 
   create_table "cart_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -61,6 +61,25 @@ ActiveRecord::Schema.define(version: 2018_12_07_085232) do
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
+  create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "e_wallet_id"
+    t.string "number"
+    t.string "bank"
+    t.string "card_type"
+    t.integer "balances", default: 10000000
+    t.datetime "expiration_date"
+    t.string "name"
+    t.string "gender"
+    t.date "date_of_birth"
+    t.string "address"
+    t.string "phone"
+    t.string "email"
+    t.string "employed_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["e_wallet_id"], name: "index_credits_on_e_wallet_id"
+  end
+
   create_table "delayed_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
     t.integer "attempts", default: 0, null: false
@@ -74,6 +93,14 @@ ActiveRecord::Schema.define(version: 2018_12_07_085232) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "e_wallets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "balances", default: 100000
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_e_wallets_on_user_id"
   end
 
   create_table "giftcodes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -122,6 +149,18 @@ ActiveRecord::Schema.define(version: 2018_12_07_085232) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "payings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "e_wallet_id"
+    t.integer "amount"
+    t.integer "status"
+    t.string "uname"
+    t.string "uemail"
+    t.integer "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["e_wallet_id"], name: "index_payings_on_e_wallet_id"
+  end
+
   create_table "ratings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "rating"
     t.bigint "user_id"
@@ -140,6 +179,20 @@ ActiveRecord::Schema.define(version: 2018_12_07_085232) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "credit_id"
+    t.bigint "e_wallet_id"
+    t.integer "amount"
+    t.string "confirmation_code"
+    t.integer "code_status"
+    t.integer "transaction_status"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["credit_id"], name: "index_transactions_on_credit_id"
+    t.index ["e_wallet_id"], name: "index_transactions_on_e_wallet_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -168,6 +221,11 @@ ActiveRecord::Schema.define(version: 2018_12_07_085232) do
     t.index ["user_id"], name: "index_wallets_on_user_id"
   end
 
+  add_foreign_key "credits", "e_wallets"
+  add_foreign_key "e_wallets", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "ratings", "courses", name: "fk_ratings_1"
+  add_foreign_key "payings", "e_wallets"
+  add_foreign_key "transactions", "credits"
+  add_foreign_key "transactions", "e_wallets"
 end

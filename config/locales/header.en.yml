@@ -1,0 +1,6 @@
+en:
+  layouts:
+    header:
+      create_e_wallet: "Create new e-wallet"
+      your_e_wallet: "Your e-wallet"
+      confirm_create_e_wallet: "Are you sure?"

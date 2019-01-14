@@ -44,7 +44,19 @@
       <% end %>
       <ul class="nav navbar-nav navbar-right mt-5">
         <% if user_signed_in? %>
-          <li style="display:none;" id="current_user"><%= current_user.id %></li>
+          <li id="current_user"><%= current_user.id %></li>
+          <li class="">
+            <% if current_user.e_wallet.nil? %>
+              <%= form_for create_new_e_wallet do |f| %>
+                <%= f.submit t(".create_e_wallet"), class: "btn btn-success right", data: {confirm: t(".confirm_create_e_wallet")} %>
+              <% end %>
+            <% else %>
+              <%= link_to e_wallet_path(current_user.e_wallet) do %>
+                <i class="fa fa-archive"></i>
+                <%= t ".your_e_wallet" %> 
+              <% end %>
+            <% end %>
+          </li>
           <li class="show-cart">
             <%= render "layouts/notification" %>
           </li>
