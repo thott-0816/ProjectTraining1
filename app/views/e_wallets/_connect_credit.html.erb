@@ -1,0 +1,67 @@
+<div class="panel-group">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <%= t ".connect_credit" %>
+      </h4>
+    </div>
+    <div class="panel-body">
+      <%= form_tag e_wallet_path, method: :get do %>
+        <div class="input-group">
+          <%= text_field_tag :number, params[:number], class: "form-control", placeholder: t(".credit_search") %>
+          <div class="input-group-btn">
+            <div class="btn-group" role="group">
+              <%= button_tag type: "submit", class: "btn btn-info" do %>
+                <span class="fa fa-search" aria-hidden="true"></span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% if @credit.present? %>
+        <br/>
+        <div class="container">
+          <p>
+            <span>
+              <i class="glyphicon glyphicon-user"></i>
+              <%= t ".name" %>
+            </span>
+            <%= @credit.name %>
+          </p>
+          <p>
+            <span>
+              <i class="glyphicon glyphicon-envelope"></i>
+              <%= t ".email" %>
+            </span>
+            <%= @credit.email %>
+          </p>
+          <p>
+            <span>
+              <i class="glyphicon glyphicon-info-sign"></i>
+              <%= t ".credit_card_number" %>
+            </span>
+            <%= @credit.number %>
+          </p>
+          <p>
+            <span>
+              <i class="glyphicon glyphicon-piggy-bank"></i>
+              <%= t ".bank" %>
+            </span>
+            <%= @credit.bank %>
+          </p>
+          <p>
+            <span>
+              <i class="glyphicon glyphicon-credit-card"></i>
+              <%= t ".card_type" %>
+            </span>
+            <%= @credit.card_type %>
+          </p>
+        </div>
+        <%= form_for @credit do |f| %>
+          <%= f.hidden_field :e_wallet_id, value: @e_wallet.id %>
+          <%= f.submit t(".connect"), class: "btn btn-success right" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

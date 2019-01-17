@@ -1,0 +1,79 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <span>
+        <%= t ".info" %>
+      </span>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+      <button type="submit" class="btn btn-success right"><%= t ".pay_in" %>
+      </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          <span>
+            <i class="glyphicon glyphicon-user"></i>
+            <%= t ".user" %>
+          </span>
+          <span><%= @e_wallet.user.name %></span>
+        </p>
+        <p>
+          <span>
+            <i class="glyphicon glyphicon-envelope"></i>
+            <%= t ".email" %>
+          </span>
+          <span><%= @e_wallet.user.email %></span>
+        </p>
+        <p>
+          <span>
+            <i class="glyphicon glyphicon-usd"></i>
+            <%= t ".balances" %>
+          </span>
+          <span><%= @e_wallet.balances.to_s + t(".vnd")%></span>
+        </p>
+      </div>
+    </div>
+    <div>
+      <p>
+        <span>
+          <i class="glyphicon glyphicon-credit-card"></i>
+          <%= t ".credits_connected" %>
+        </span>
+      <% if @credits.empty? %>
+        <span><%= t ".none" %></span>
+      </p>
+      <%= t ".request_connect" %>
+      <% else %>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr class="info">
+                <th scope="col">#</th>
+                <th scope="col">Bank</th>
+                <th scope="col">Type</th>
+                <th scope="col">Holder</th>
+                <th scope="col">Expiration date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @credits.to_ary.each do |credit| %>
+                <tr>
+                  <th scope="row"><%= @credits.index(credit) + 1 %></th>
+                  <td><%= credit.bank %></td>
+                  <td><%= credit.card_type %></td>
+                  <td><%= credit.name %></td>
+                  <td><%= credit.expiration_date %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

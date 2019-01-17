@@ -1,0 +1,8 @@
+en:
+  credits:
+    update:
+      existed: "This credit card has been connected."
+      success: "Success."
+      failure: "Failure."
+      not_found: "Not Found."
+      credit_nil: "Something went wrong, the credit card may not exist."

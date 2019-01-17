@@ -1,0 +1,6 @@
+vi:
+  layouts:
+    header:
+      create_e_wallet: "Tạo ví điện tử"
+      your_e_wallet: "Ví của bạn"
+      confirm_create_e_wallet: "Bạn chắc chắn muốn tạo?"

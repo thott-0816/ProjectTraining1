@@ -1,0 +1,8 @@
+vi:
+  credits:
+    update:
+      existed: "Thẻ này đã được liên kết."
+      success: "Liên kết thành công."
+      failure: "Liên kết thất bại."
+      not_found: "Không tìm thấy."
+      credit_nil: "Thẻ này không tồn tại."

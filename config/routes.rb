@@ -39,5 +39,8 @@ Rails.application.routes.draw do
       end
       get "/", to: "dashboards#index"
     end
+
+    resources :e_wallets, only: [:create, :show]
+    resources :credits, only: :update
   end
 end
