@@ -95,14 +95,20 @@ codes.each do |key, value|
   )
 end
 
+5.times do |n|
+  EWallet.create!(
+    user_id: n+1
+  )
+end
+
 20.times do |n|
-  e_wallet_id = nil
-  number = Faker::Bank.account_number(13)
+  e_wallet_id = (n%3)+3
+  number = Faker::Bank.account_number(16)
   bank = Faker::Bank.name
-  card_type = Faker::Types.rb_string
+  card_type = Faker::Number.between(0, 4)
   expiration_date = Faker::Date.forward(700)
   name = Faker::Name.name
-  gender = Faker::Gender.type
+  gender = Faker::Number.between(0, 2)
   date_of_birth = Faker::Date.birthday(18, 65)
   address = Faker::Address.full_address
   phone = Faker::PhoneNumber.phone_number

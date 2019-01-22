@@ -9,8 +9,9 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-12">
-      <button type="submit" class="btn btn-success right"><%= t ".pay_in" %>
-      </button>
+        <%= link_to new_transaction_path, class: "btn btn-success right" do %>
+          <%= t ".pay_in" %>
+        <% end %>
       </div>
     </div>
     <div class="row">
@@ -44,7 +45,7 @@
           <i class="glyphicon glyphicon-credit-card"></i>
           <%= t ".credits_connected" %>
         </span>
-      <% if @credits.empty? %>
+      <% if @approved_credits.connected.empty? %>
         <span><%= t ".none" %></span>
       </p>
       <%= t ".request_connect" %>
@@ -54,20 +55,20 @@
             <thead>
               <tr class="info">
                 <th scope="col">#</th>
-                <th scope="col">Bank</th>
-                <th scope="col">Type</th>
-                <th scope="col">Holder</th>
-                <th scope="col">Expiration date</th>
+                <th scope="col"><%= t ".bank" %></th>
+                <th scope="col"><%= t ".type" %></th>
+                <th scope="col"><%= t ".holder" %></th>
+                <th scope="col"><%= t ".expiration_date" %></th>
               </tr>
             </thead>
             <tbody>
-              <% @credits.to_ary.each do |credit| %>
+              <% @approved_credits.connected.each do |credit| %>
                 <tr>
-                  <th scope="row"><%= @credits.index(credit) + 1 %></th>
+                  <th scope="row"><%= @approved_credits.connected.index(credit) + 1 %></th>
                   <td><%= credit.bank %></td>
                   <td><%= credit.card_type %></td>
                   <td><%= credit.name %></td>
-                  <td><%= credit.expiration_date %></td>
+                  <td><%= l(credit.expiration_date, format: :long) %></td>
                 </tr>
               <% end %>
             </tbody>

@@ -1,0 +1,72 @@
+<div class="container">
+  <%= form_for @credit do |f| %>
+    <h3><span class="label label-primary"><%= t ".new_credit" %></span></h3>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="well" id="well">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="row">
+            <div class="form-group required col-md-6">
+              <%= f.label :name, t(".name"), class: "control-label" %>
+              <%= f.text_field :name, class: "form-control", required: true, placeholder: t(".name_example") %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= f.label :employed_by, t(".employed_by") %>
+              <%= f.text_field :employed_by, class: "form-control", placeholder: t(".employed_example") %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <%= f.label :gender, t(".gender") %>
+              <%= f.select :gender, options_for_select([[t(".male"), :male], [t(".female"), :female], [t(".other"), :other]], selected: params[:credit] ? params[:credit][:gender] : nil),
+              {prompt: t(".select_one")}, class: "form-control" %>
+            </div>
+              <div class="form-group col-md-6">
+              <%= f.label :date_of_birth, t(".date_of_birth") %>
+              <%= f.date_field :date_of_birth, class: "form-control" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <%= f.label :phone, t(".phone") %>
+              <%= f.text_field :phone, class: "form-control", placeholder: t(".phone_example") %>
+            </div>
+            <div class="form-group required col-md-6">
+              <%= f.label :email, t(".email"), class: "control-label" %>
+              <%= f.text_field :email, class: "form-control", required: true, placeholder: t(".email_example") %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :address, t(".address") %>
+            <%= f.text_field :address, class: "form-control", placeholder: t(".address_example") %>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="form-group required">
+            <%= f.label :number, t(".number"), class: "control-label" %>
+            <%= f.text_field :number, class: "form-control", required: true, placeholder: t(".number_example") %>
+          </div>
+          <div class="row">
+            <div class="form-group required col-md-6">
+              <%= f.label :bank, t(".bank"), class: "control-label" %>
+              <%= f.text_field :bank, class: "form-control", required: true, placeholder: t(".bank_example") %>
+            </div>
+            <div class="form-group required col-md-6">
+              <%= f.label :expiration_date, t(".expiration_date"), class: "control-label" %>
+              <%= f.date_field :expiration_date, class: "form-control", required: true %>
+            </div>
+          </div>
+          <div class="form-group required">
+            <%= f.label :card_type, t(".card_type"), class: "control-label" %>
+            <%= f.select :card_type, options_for_select([[t(".american_express"), :american_express], [t(".discover_card"),:discover_card],
+              [t(".jcb"), :jcb], [t(".master_card"), :master_card], [t(".visa"), :visa]], selected: params[:credit] ? params[:credit][:card_type] : nil),
+              {prompt: t(".select_one")}, class: "form-control", required: true %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.submit t(".submit"), class: "btn btn-success"%>
+      </div>
+    </div>
+  <% end %>
+</div>

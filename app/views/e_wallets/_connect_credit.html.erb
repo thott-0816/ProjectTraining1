@@ -7,20 +7,12 @@
     </div>
     <div class="panel-body">
       <%= form_tag e_wallet_path, method: :get do %>
-        <div class="input-group">
-          <%= text_field_tag :number, params[:number], class: "form-control", placeholder: t(".credit_search") %>
-          <div class="input-group-btn">
-            <div class="btn-group" role="group">
-              <%= button_tag type: "submit", class: "btn btn-info" do %>
-                <span class="fa fa-search" aria-hidden="true"></span>
-              <% end %>
-            </div>
-          </div>
-        </div>
+          <%= select_tag :number, options_for_select((@approved_credits - @approved_credits.connected).collect {|s| [s.number, s.id]}), prompt: t(".select_one"),
+            class: "form-control", onclick: "this.form.submit()" %>
       <% end %>
       <% if @credit.present? %>
         <br/>
-        <div class="container">
+        <div>
           <p>
             <span>
               <i class="glyphicon glyphicon-user"></i>
@@ -57,11 +49,21 @@
             <%= @credit.card_type %>
           </p>
         </div>
-        <%= form_for @credit do |f| %>
-          <%= f.hidden_field :e_wallet_id, value: @e_wallet.id %>
-          <%= f.submit t(".connect"), class: "btn btn-success right" %>
-        <% end %>
+        <div>
+          <%= form_for @credit do |f| %>
+            <%= f.hidden_field :connected, value: true %>
+            <%= f.submit t(".connect"), class: "btn btn-success right" %>
+          <% end %>
+        </div>
       <% end %>
+      <br/><br/>
+      <div>
+        <p class="text-muted">
+        <%= t ".pre_new_credit_link" %>
+        <%= link_to t(".here"), new_credit_path, id: "link-new-credit" %>
+        <%= t ".post_new_credit_link" %>
+        </p>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h2 class="page-header title"><%= t ".credit_list" %></h2>
+  </div>
+  <div class="col-lg-12">
+  </div>
+</div>
+<hr>
+<table class="table table-hover table-bordered datatable">
+  <thead class="text-center">
+    <tr>
+      <th class="col-md-1"><%= t ".e_wallet_id" %></th>
+      <th class="col-md-1"><%= t ".number" %></th>
+      <th class="col-md-1"><%= t ".bank" %></th>
+      <th class="col-md-1"><%= t ".card_type" %></th>
+      <th class="col-md-1"><%= t ".balances" %></th>
+      <th class="col-md-2"><%= t ".expiration" %></th>
+      <th class="col-md-1"><%= t ".action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render "grid_credit" %>
+  </tbody>
+</table>

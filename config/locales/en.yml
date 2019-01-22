@@ -81,6 +81,7 @@ en:
         charts: " Charts"
         course: "Course"
         dashboard: " Dashboard"
+        credit: "Credit"
         form: " Forms"
         home: "Home"
         index: "Index"
@@ -130,6 +131,24 @@ en:
         description: "Description"
         lecture: "Lecture"
         rating: "Rating"
+    credits:
+      index:
+        e_wallet_id: "E-Wallet"
+        credit_list: "Credit list"
+        action: "Action"
+        number: "Credit number"
+        balances: "Balances"
+        bank: "Bank"
+        card_type: "Card type"
+        expiration: "Expiration"
+      grid_credit:
+        approve: "Approve"
+        unapprove: "Unapprove"
+        confirm_approve: "Comfirm approve?"
+        confirm_unapprove: "Comfirm unapprove?"
+      update:
+        appro_success: "Approved."
+        unappro_success: "Unapproved."
     users:
       not_user: "user not found"
       role:
@@ -181,3 +200,6 @@ en:
     not_found: "No matching results were found"
     ratings: "Ratings"
     search: "Search!"
+  time:
+    formats:
+      long: "%d %B, %Y"

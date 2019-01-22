@@ -77,8 +77,9 @@ vi:
         category: "Danh mục"
         charts: " Biểu đồ"
         course: "Khóa học"
-        dashboard: " Bảng điều khiển"
-        form: " Biểu mẫu"
+        dashboard: "Bảng điều khiển"
+        credit: "Thẻ tín dụng"
+        form: "Biểu mẫu"
         home: "Trang chủ"
         index: "Danh mục"
         logout: "Đăng xuất"
@@ -127,6 +128,24 @@ vi:
         description: "Mô tả"
         lecture: "Giảng viên"
         rating: "Đánh giá"
+    credits:
+      index:
+        e_wallet_id: "Mã ví điện tử"
+        credit_list: "Danh sách các thẻ tín dụng"
+        action: "Hành động"
+        number: "Số thẻ"
+        balances: "Số dư"
+        bank: "Ngân hàng"
+        card_type: "Kiểu thẻ"
+        expiration: "Hết hạn"
+      grid_credit:
+        approve: "Phê duyệt"
+        unapprove: "Hủy phê duyệt"
+        confirm_approve: "Bạn có chắc chắn muốn xác nhận?"
+        confirm_unapprove: "Bạn có chắc chắn muốn hủy xác nhận?"
+      update:
+        appro_success: "Đã xác nhận."
+        unappro_success: "Đã hủy xác nhận."
     users:
       not_user: "Không tìm thấý người dùng"
       role:
@@ -178,3 +197,6 @@ vi:
     not_found: "Không có kết quả tìm kiếm phù hợp"
     ratings: "Sô lượng bình chọn"
     search: "Tìm kiếm!"
+  time:
+    formats:
+      long: "%d %B, %Y"

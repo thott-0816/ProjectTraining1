@@ -2,6 +2,7 @@ vi:
   e_wallets:
     show:
       not_found: "Không tìm thấy."
+      must_enter: "Bạn cần nhập số thẻ credit."
     connect_credit:
       email: "Thư điện tử: "
       balances: "Số dư: "
@@ -13,13 +14,20 @@ vi:
       card_type: "Kiểu thẻ: "
       name: "Tên: "
       connect: "Liên kết"
+      pre_new_credit_link: "(*) Nếu chưa có thông tin thẻ tín dụng, vui lòng đăng ký thông tin thẻ"
+      post_new_credit_link: "để được xác minh số thẻ."
+      here: "tại đây"
     info:
       info: "Thông tin ví"
-      user: "Thư điện tử: "
-      email: "Email: "
+      user: "Người dùng: "
+      email: "Thư điện tử: "
       balances: "Số dư: "
       vnd: " đồng."
       credits_connected: "Thẻ tín dụng được liên kết: "
       request_connect: "Bạn cần liên kết với thẻ tín dụng."
       none: "Không có."
       pay_in: "Nạp tiền"
+      bank: "Ngân hàng"
+      type: "Kiểu"
+      holder: "Người sở hữu"
+      expiration_date: "Hết hạn"

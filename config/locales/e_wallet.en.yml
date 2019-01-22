@@ -2,6 +2,7 @@ en:
   e_wallets:
     show:
       not_found: "Not found."
+      must_enter: "You must enter you credit card number."
     connect_credit:
       email: "Email: "
       balances: "Balances: "
@@ -13,6 +14,9 @@ en:
       card_type: "Type: "
       name: "Name: "
       connect: "Connect"
+      pre_new_credit_link: "(*) If you do not have credit card information, please register"
+      post_new_credit_link: "to verify the card number."
+      here: "here"
     info:
       info: "Wallet Infomation"
       user: "Holder: "
@@ -23,3 +27,7 @@ en:
       request_connect: "You need to connect a credit card account."
       none: "None"
       pay_in: "Pay in"
+      bank: "Bank"
+      type: "Type"
+      holder: "Holder"
+      expiration_date: "Expiration"
