@@ -94,3 +94,31 @@ codes.each do |key, value|
     value: value
   )
 end
+
+20.times do |n|
+  e_wallet_id = nil
+  number = Faker::Bank.account_number(13)
+  bank = Faker::Bank.name
+  card_type = Faker::Types.rb_string
+  expiration_date = Faker::Date.forward(700)
+  name = Faker::Name.name
+  gender = Faker::Gender.type
+  date_of_birth = Faker::Date.birthday(18, 65)
+  address = Faker::Address.full_address
+  phone = Faker::PhoneNumber.phone_number
+  email = Faker::Internet.email
+  employed_by = Faker::Job.title
+  Credit.create!(
+    e_wallet_id: e_wallet_id,
+    number: number,
+    bank: bank,
+    card_type: card_type,
+    expiration_date: expiration_date,
+    name: name,
+    gender: gender,
+    date_of_birth: date_of_birth,
+    address: address,
+    phone: phone,
+    email: email,
+    employed_by: employed_by)
+end
