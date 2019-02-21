@@ -1,0 +1,7 @@
+<% if @transaction && @transaction.errors.any? %>
+  $('.show-notice').html('<% @transaction.errors.full_messages.each do |msg| %>\
+    - <%= msg %><br>\
+  <% end %>');
+<% else %>
+  window.location.href = '<%= new_transaction_path %>';
+<% end %>

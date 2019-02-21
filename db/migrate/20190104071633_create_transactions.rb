@@ -5,8 +5,8 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.references :e_wallet, foreign_key: true
       t.integer :amount
       t.string :confirmation_code
-      t.integer :code_status
-      t.integer :transaction_status
+      t.integer :code_status, default: 0
+      t.integer :transaction_status, default: 0
       t.string :content
 
       t.timestamps

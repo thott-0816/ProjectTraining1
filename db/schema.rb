@@ -188,8 +188,8 @@ ActiveRecord::Schema.define(version: 2019_01_04_072357) do
     t.bigint "e_wallet_id"
     t.integer "amount"
     t.string "confirmation_code"
-    t.integer "code_status"
-    t.integer "transaction_status"
+    t.integer "code_status", default: 0
+    t.integer "transaction_status", default: 0
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

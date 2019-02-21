@@ -1,23 +1,23 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <%= form_for @transaction, method: :post do |f| %>
-        <%= render "shared/error_messages", object: f.object %>
-        <div class="form-group">
-          <%= f.label :credit_card %>
-          <%= f.collection_select :credit_id, current_user.e_wallet.credits.connected, :id, :number,
-            {prompt: "-- Select --", selected: params[:credit_id]}, {class: "form-control form-control-md custom-select"} %>
-        </div>
-        <div class="form-group">
-          <%= f.label :amount %>
-          <%= f.text_field :amount, class: "form-control", placeholder: "Enter amount to pay in..." %>
-        </div>
-        <div class="form-group">
-          <%= f.label :content %>
-          <%= f.text_field :content, class: "form-control", placeholder: "Enter content..." %>
-        </div>
-        <%= f.submit "Confirm", class: "btn btn-primary" %>
-      <% end %>
+<div class="pass-form form-transaction">
+  <%= form_for @transaction, url: transactions_path, method: :post, remote: true do |f| %>
+    <%= link_to root_path, class: "close" do %><i class="fa fa-times"></i><% end %>
+    <h3 class="text-center"><%= t ".title_transaction" %></h3>
+    <div class="transaction_fail"></div>
+    
+    <div class="form-group">
+    <%= f.select :credit_id,
+      current_user.e_wallet.credits.connected.collect {|credits| [credits.number, credits.id]},
+        {prompt: t(".select_credits")}, {class: "form-control"} %>
     </div>
-  </div>
+    <div class="form-group">
+      <%= f.number_field :amount, placeholder: t(".amount"),
+        class:"form-control", required: true, min: 0 %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :content, rows: 5, placeholder: t(".content"), class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit t(".btn_ok"), class: "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
 </div>
