@@ -1,0 +1,26 @@
+<% @credits.each do |credit| %>
+  <tr class="odd gradeX">
+    <td><%= link_to credit.e_wallet.id, e_wallet_path(credit.e_wallet) %></td>
+    <td><%= link_to credit.number, admin_credit_path(credit) %></td>
+    <td><%= credit.bank %></td>
+    <td><%= credit.card_type %></td>
+    <td><%= credit.balances %></td>
+    <td><%= l(credit.expiration_date, format: :long) %></td>
+    <td>
+      <% if can? :update, credit %>
+        <% if !credit.approved? %>
+          <%= form_for [:admin, credit] do |f| %>
+            <%= f.hidden_field :approved, value: true %>
+            <%= f.submit t(".approve"), class: "btn btn-success", data: {confirm: t(".confirm_approve")} %>
+          <% end %>
+        <% else %>
+          <%= form_for [:admin, credit] do |f| %>
+            <%= f.hidden_field :approved, value: false %>
+             <%= f.hidden_field :connected, value: false %>
+            <%= f.submit t(".unapprove"), class: "btn btn-danger", data: {confirm: t(".confirm_unapprove")} %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

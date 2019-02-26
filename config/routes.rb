@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
 
     namespace :admin do
+      resources :credits, only: [:update, :index, :show]
       resources :users
       resources :categories
       resources :giftcodes, only: :index
@@ -41,6 +42,7 @@ Rails.application.routes.draw do
     end
 
     resources :e_wallets, only: [:create, :show]
-    resources :credits, only: :update
+    resources :credits, only: [:update, :new, :create]
+    resources :transactions, only: [:create, :new]
   end
 end

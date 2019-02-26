@@ -65,16 +65,18 @@ ActiveRecord::Schema.define(version: 2019_01_04_072357) do
     t.bigint "e_wallet_id"
     t.string "number"
     t.string "bank"
-    t.string "card_type"
+    t.integer "card_type"
     t.integer "balances", default: 10000000
     t.datetime "expiration_date"
     t.string "name"
-    t.string "gender"
+    t.integer "gender"
     t.date "date_of_birth"
     t.string "address"
     t.string "phone"
     t.string "email"
     t.string "employed_by"
+    t.boolean "approved", default: false
+    t.boolean "connected", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["e_wallet_id"], name: "index_credits_on_e_wallet_id"
@@ -224,7 +226,6 @@ ActiveRecord::Schema.define(version: 2019_01_04_072357) do
   add_foreign_key "credits", "e_wallets"
   add_foreign_key "e_wallets", "users"
   add_foreign_key "notifications", "users"
-  add_foreign_key "ratings", "courses", name: "fk_ratings_1"
   add_foreign_key "payings", "e_wallets"
   add_foreign_key "transactions", "credits"
   add_foreign_key "transactions", "e_wallets"

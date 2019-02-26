@@ -7,20 +7,15 @@ class EWalletsController < ApplicationController
         redirect_to e_wallet_path e_wallet
       else
         flash[:danger] = t "create_failed"
-        render :new
       end
     end
   end
 
   def show
-    @e_wallet = current_user.e_wallet
-    if params[:number].to_i > 0 
-      @credit = Credit.find_by_number(params[:number])
-      unless @credit
-        flash[:danger] = t ".not_found"
-        redirect_to e_wallet_path @e_wallet
-      end
+    @e_wallet = EWallet.find_by id: params[:id]
+    @approved_credits = @e_wallet.credits.approved
+    if params[:number]
+      @credit = Credit.find_by id: params[:number]
     end
-    @credits = @e_wallet.credits  
   end
 end
