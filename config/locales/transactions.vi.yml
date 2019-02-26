@@ -1,0 +1,26 @@
+vi:
+  errors:
+    messages:
+      required: "phải tồn tại"
+  payin_mailer:
+    payin_email:
+      subject:  "Mã xác nhận giao dịch"
+      greeting: "Gửi "
+      content: "Mã xác nhận của bạn là "
+      waring: " (Mã này chỉ có hiệu lực trong 2 phút)"
+  transactions:
+    new:
+      title_transaction: "Nhập thông tin giao dịch"
+      select_credits: "-- Chọn số thẻ --"
+      amount: "Số tiền"
+      content: "Nội dung"
+      btn_ok: "OK"
+    create:
+      title: "Nhập mã xác nhận"
+      check_mail: "Hãy kiểm tra email để lấy mã xác nhận!"
+      confirm_code: "Mã xác nhận"
+    update:
+      code_fail: "Mã xác nhận sai, thử lại"
+      expired: "Mã xác nhận đã hết hạn, bạn cần thực hiện giao dịch mới!"
+      no_transaction: "Giao dịch không tồn tại"
+      success_transaction: "Giao dịch thành công, bạn có thể thực hiện giao dịch mới"

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       end
     end
     resources :relationships, only: [:create, :destroy]
+    resources :transactions, only: %i(new create update)
 
     namespace :admin do
       resources :credits, only: [:update, :index, :show]

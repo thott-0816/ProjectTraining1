@@ -1,0 +1,19 @@
+$('.transaction_fail').addClass('alert alert-danger');
+<% if @transaction.errors.any? %>
+  $('.transaction_fail').html('<% @transaction.errors.full_messages.each do |msg| %>\
+    - <%= msg %><br>\
+  <% end %>');
+<% else %>
+  $('.form-transaction').html('<%= form_for @transaction, url: transaction_path(@transaction),
+    method: :put, remote: true do |f| %>\
+    <%= link_to new_transaction_path, class: "close" do %><i class="fa fa-times"></i><% end %>\
+    <h3 class="text-center"><%= t ".title" %></h3>\
+    <div class="alert alert-danger show-notice"><%= t ".check_mail" %></div>\
+    <div class="form-group">\
+      <input name="code" type="text" placeholder="<%= t ".confirm_code" %>" class="form-control" autocomplete="off" required />\
+    </div>\
+    <div class="form-group">\
+      <%= f.submit t("transactions.new.btn_ok"), class: "btn btn-primary btn-block" %>\
+    </div>\
+  <% end %>');
+<% end %>

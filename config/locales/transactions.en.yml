@@ -1,0 +1,23 @@
+en:
+  payin_mailer:
+    payin_email:
+      subject:  "CODE pay in"
+      greeting: "Dear "
+      content: "Your code is "
+      waring: " (This code is only valid for 2 minutes)"
+  transactions:
+    new:
+      title_transaction: "Enter transaction information"
+      select_credits: "-- Select the credits number --"
+      amount: "Amount"
+      content: "Content"
+      btn_ok: "OK"
+    create:
+      title: "Enter the confirmation code"
+      check_mail: "Please check your email to get the code!"
+      confirm_code: "confirmation code"
+    update:
+      code_fail: "Incorrect confirmation code, try again"
+      expired: "The code has expired, you need to make a new transaction!"
+      no_transaction: "Transaction does not exist"
+      success_transaction: "Successful transactions, you can make new transactions"

@@ -21,6 +21,7 @@ module EduOnline
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :en
     config.time_zone = Settings.time_zone
+    config.active_record.default_timezone = :local
     config.active_job.queue_adapter = :delayed_job
     config.middleware.insert_before 0, Rack::Cors do
       allow do
